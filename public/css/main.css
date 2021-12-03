@@ -4988,3 +4988,7 @@ dl.toggle.time-line:before {
 .banner-content p {
     color: white;
 }
+
+.background-blue {
+    background-color: #142850;
+}
