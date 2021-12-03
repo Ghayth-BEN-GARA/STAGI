@@ -1,28 +1,11 @@
 <!DOCTYPE html>
-    <html lang = "zxx" class="no-js">
+    <html lang = "zxx" class = "no-js">
 	    <head>
 		    @include('layouts.head',['nom_page'=>'Accueil'])
 		</head>
 		<body>	
-		    <header id="header" id="home">
-	  		<div class="header-top">
-	  			<div class="container">
-			  		<div class="row">
-			  			<div class="col-lg-6 col-sm-6 col-8 header-top-left no-padding">
-			  				<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-behance"></i></a></li>
-			  				</ul>			
-			  			</div>
-			  			<div class="col-lg-6 col-sm-6 col-4 header-top-right no-padding">
-			  				<a href="tel:+953 012 3654 896"><span class="lnr lnr-phone-handset"></span> <span class="text">+953 012 3654 896</span></a>
-			  				<a href="mailto:support@colorlib.com"><span class="lnr lnr-envelope"></span> <span class="text">support@colorlib.com</span></a>			
-			  			</div>
-			  		</div>			  					
-	  			</div>
-			</div>
+		    <header id = "header" id = "home">
+	  		    @include('layouts.header-top')
 		    <div class="container main-menu">
 		    	<div class="row align-items-center justify-content-between d-flex">
 			      <div id="logo">
@@ -574,7 +557,7 @@
 								</p>
 							</div>
 							<div class="single-review item">
-								<img src="img/r1.png" alt="">
+								<img src="{{asset('img/r1.png')}}" alt="">
 								<div class="title justify-content-start d-flex">
 									<a href="#"><h4>Fannie Rowe</h4></a>
 									<div class="star">
