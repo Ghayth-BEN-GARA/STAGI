@@ -13,4 +13,6 @@
     |
     */
     Route::get('/', [SiteWebController::class, 'OuvrirHome']);
+    Route::get('/contact', [SiteWebController::class, 'OuvrirContact']);
+    Route::get('/envoyer-email-contact', [SiteWebController::class, 'EnvoyerEmail']);
 ?>

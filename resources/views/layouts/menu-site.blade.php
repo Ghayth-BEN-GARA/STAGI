@@ -8,7 +8,7 @@
     <nav id = "nav-menu-container">
         <ul class = "nav-menu">
             <li><a href = "{{url('/')}}">Accueil</a></li>	          					          		          
-            <li><a href = "contact.html">Contact</a></li>
+            <li><a href = "{{url('/contact')}}">Contact</a></li>
         </ul>
     </nav>		    		
 </div>

@@ -20,7 +20,7 @@ $(document).ready(function() {
     };
     if (document.getElementById("service-select")) {
         $('select').niceSelect();
-    };    
+    };
 
     //------- Lightbox  js --------//  
 
@@ -38,14 +38,6 @@ $(document).ready(function() {
         preloader: false,
         fixedContentPos: false
     });
-
-    //------- Datepicker  js --------//  
-
-      $( function() {
-        $( "#datepicker" ).datepicker();
-        $( "#datepicker2" ).datepicker();
-      } );
-
 
     //------- Superfist nav menu  js --------//  
 
@@ -69,7 +61,7 @@ $(document).ready(function() {
     });
 
 
-     $(document).on('click', '.accordion > dt > a', function(e) {
+    $(document).on('click', '.accordion > dt > a', function(e) {
 
         var current = $(this).parent().next("dd");
         $(this).parents(".accordion").find("dt > a").removeClass("active");
@@ -84,26 +76,26 @@ $(document).ready(function() {
     //------- Tabs Js --------//  
     if (document.getElementById("horizontalTab")) {
 
-    $('#horizontalTab').jqTabs({
-        direction: 'horizontal',
-        duration: 200
-    });
-    
-    };  
+        $('#horizontalTab').jqTabs({
+            direction: 'horizontal',
+            duration: 200
+        });
+
+    };
 
 
     //------- Owl Carusel  js --------//  
 
 
     $('.active-popular-carusel').owlCarousel({
-        items:4,
+        items: 4,
         margin: 30,
-        loop:true,
+        loop: true,
         dots: true,
         autoplayHoverPause: true,
-        smartSpeed:650,         
-        autoplay:true,      
-            responsive: {
+        smartSpeed: 650,
+        autoplay: true,
+        responsive: {
             0: {
                 items: 1
             },
@@ -114,20 +106,20 @@ $(document).ready(function() {
                 items: 2,
             },
             992: {
-                items:4
+                items: 4
             }
         }
     });
 
     $('.active-upcoming-event-carusel').owlCarousel({
-        items:2,
+        items: 2,
         margin: 30,
-        loop:true,
+        loop: true,
         dots: true,
         autoplayHoverPause: true,
-        smartSpeed:650,         
-        autoplay:true,      
-            responsive: {
+        smartSpeed: 650,
+        autoplay: true,
+        responsive: {
             0: {
                 items: 1
             },
@@ -142,14 +134,14 @@ $(document).ready(function() {
 
 
     $('.active-review-carusel').owlCarousel({
-        items:2,
+        items: 2,
         margin: 30,
-        loop:true,
+        loop: true,
         dots: true,
         autoplayHoverPause: true,
-        smartSpeed:650,         
-        autoplay:true,      
-            responsive: {
+        smartSpeed: 650,
+        autoplay: true,
+        responsive: {
             0: {
                 items: 1
             },
@@ -189,7 +181,7 @@ $(document).ready(function() {
             $('#mobile-body-overly').toggle();
         });
 
-            $(document).on('click', function(e) {
+        $(document).on('click', function(e) {
             var container = $("#mobile-nav, #mobile-nav-toggle");
             if (!container.is(e.target) && container.has(e.target).length === 0) {
                 if ($('body').hasClass('mobile-nav-active')) {
@@ -276,141 +268,6 @@ $(document).ready(function() {
         }
     });
 
-    //------- Google Map  js --------//  
-
-    if (document.getElementById("map")) {
-        google.maps.event.addDomListener(window, 'load', init);
-
-        function init() {
-            var mapOptions = {
-                zoom: 11,
-                center: new google.maps.LatLng(40.6700, -73.9400), // New York
-                styles: [{
-                    "featureType": "water",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#e9e9e9"
-                    }, {
-                        "lightness": 17
-                    }]
-                }, {
-                    "featureType": "landscape",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#f5f5f5"
-                    }, {
-                        "lightness": 20
-                    }]
-                }, {
-                    "featureType": "road.highway",
-                    "elementType": "geometry.fill",
-                    "stylers": [{
-                        "color": "#ffffff"
-                    }, {
-                        "lightness": 17
-                    }]
-                }, {
-                    "featureType": "road.highway",
-                    "elementType": "geometry.stroke",
-                    "stylers": [{
-                        "color": "#ffffff"
-                    }, {
-                        "lightness": 29
-                    }, {
-                        "weight": 0.2
-                    }]
-                }, {
-                    "featureType": "road.arterial",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#ffffff"
-                    }, {
-                        "lightness": 18
-                    }]
-                }, {
-                    "featureType": "road.local",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#ffffff"
-                    }, {
-                        "lightness": 16
-                    }]
-                }, {
-                    "featureType": "poi",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#f5f5f5"
-                    }, {
-                        "lightness": 21
-                    }]
-                }, {
-                    "featureType": "poi.park",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#dedede"
-                    }, {
-                        "lightness": 21
-                    }]
-                }, {
-                    "elementType": "labels.text.stroke",
-                    "stylers": [{
-                        "visibility": "on"
-                    }, {
-                        "color": "#ffffff"
-                    }, {
-                        "lightness": 16
-                    }]
-                }, {
-                    "elementType": "labels.text.fill",
-                    "stylers": [{
-                        "saturation": 36
-                    }, {
-                        "color": "#333333"
-                    }, {
-                        "lightness": 40
-                    }]
-                }, {
-                    "elementType": "labels.icon",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                }, {
-                    "featureType": "transit",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#f2f2f2"
-                    }, {
-                        "lightness": 19
-                    }]
-                }, {
-                    "featureType": "administrative",
-                    "elementType": "geometry.fill",
-                    "stylers": [{
-                        "color": "#fefefe"
-                    }, {
-                        "lightness": 20
-                    }]
-                }, {
-                    "featureType": "administrative",
-                    "elementType": "geometry.stroke",
-                    "stylers": [{
-                        "color": "#fefefe"
-                    }, {
-                        "lightness": 17
-                    }, {
-                        "weight": 1.2
-                    }]
-                }]
-            };
-            var mapElement = document.getElementById('map');
-            var map = new google.maps.Map(mapElement, mapOptions);
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(40.6700, -73.9400),
-                map: map,
-                title: 'Snazzy!'
-            });
-        }
-    }
 
     //------- Mailchimp js --------//  
 

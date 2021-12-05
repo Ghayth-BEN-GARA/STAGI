@@ -1018,25 +1018,25 @@ h6 {
 
 .genric-btn.primary {
     color: #fff;
-    background: #f7631b;
+    background: #142850;
     border: 1px solid transparent
 }
 
 .genric-btn.primary:hover {
-    color: #f7631b;
-    border: 1px solid #f7631b;
-    background: #fff
+    color: #142850;
+    border: 1px solid #142850;
+    background: #fff;
 }
 
 .genric-btn.primary-border {
-    color: #f7631b;
-    border: 1px solid #f7631b;
+    color: #142850;
+    border: 1px solid #142850;
     background: #fff
 }
 
 .genric-btn.primary-border:hover {
     color: #fff;
-    background: #f7631b;
+    background: #142850;
     border: 1px solid transparent
 }
 
@@ -4764,7 +4764,7 @@ dl.toggle.time-line:before {
 
 .contact-page-area .form-area .form-control:focus {
     box-shadow: none !important;
-    border-color: #ced4da !important
+    border-color: #ced4da;
 }
 
 .contact-page-area .form-area input {
@@ -4794,8 +4794,8 @@ dl.toggle.time-line:before {
 }
 
 .contact-page-area .form-area .genric-btn:hover {
-    border: 1px solid #f7631b;
-    color: #f7631b !important
+    border: 1px solid #142850;
+    color: #142850 !important;
 }
 
 @media (max-width: 991px) {
@@ -4817,7 +4817,7 @@ dl.toggle.time-line:before {
 .contact-page-area .address-wrap .single-contact-address .lnr {
     font-size: 30px;
     font-weight: 500;
-    color: #f7631b;
+    color: #142850;
     margin-right: 30px
 }
 
@@ -4991,6 +4991,13 @@ dl.toggle.time-line:before {
     color: white;
 }
 
-.background-blue {
-    background-color: #142850;
+.error_form_contact {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ff726f;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-weight: 500;
 }
