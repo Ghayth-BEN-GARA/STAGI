@@ -15,6 +15,7 @@
                 $table->charset = 'utf8';
                 $table->string('email',350)->primary();
                 $table->string('password',999);
+                $table->string('etat',50)->default('Active');
                 $table->date('date');
                 $table->time('temps');
                 $table->bigInteger('id')->unsigned();

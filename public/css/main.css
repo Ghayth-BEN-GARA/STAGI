@@ -2098,7 +2098,7 @@ h6 {
 }
 
 #header #logo h1 {
-    font-size: 34px;
+    font-size: 26px;
     margin: 0;
     padding: 0;
     line-height: 1;
@@ -2107,7 +2107,7 @@ h6 {
     color: #fff;
     text-transform: uppercase;
     display: inline;
-    margin-left: -25px
+    margin-left: 3px;
 }
 
 #header #logo h1 a,
@@ -2119,13 +2119,15 @@ h6 {
 
 #header #logo img {
     padding: 0;
-    margin: 0
+    margin: 0;
+    height: 50px;
+    margin-top: -15px;
 }
 
 @media (max-width: 768px) {
     #header #logo h1 {
-        font-size: 22px;
-        margin-left: 1px;
+        font-size: 16px;
+        margin-left: -10px;
     }
     #header #logo img {
         max-height: 40px;

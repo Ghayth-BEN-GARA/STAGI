@@ -1,79 +1,89 @@
-.hamburger-menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 35px;
-    z-index: 2;
+svg {
+    margin-top: 0;
+    margin-left: 25px;
+    display: block;
+    float: left;
+    width: 350px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.hamburger-menu button {
-    position: relative;
-    width: 30px;
-    height: 22px;
-    border: none;
-    background: none;
-    padding: 0;
-    cursor: pointer;
+.message-box {
+    height: 200px;
+    width: 380px;
+    display: block;
+    float: right;
+    margin-top: 75px;
+    font-family: Roboto;
+    font-weight: 300;
+    margin-right: 200px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.hamburger-menu button span {
-    position: absolute;
-    height: 3px;
-    background: #000;
-    width: 100%;
-    left: 0px;
-    top: 0px;
-    transition: 0.1s ease-in;
+.message-box h1 {
+    font-size: 30px;
+    line-height: 43px;
+    margin-bottom: 40px;
 }
 
-.btn {
-    z-index: 1;
-    overflow: hidden;
-    background: transparent;
-    position: relative;
-    padding: 8px 50px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1em;
-    letter-spacing: 2px;
-    transition: 0.2s ease;
-    font-weight: bold;
-    margin: 5px 0px;
+.message-box p {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: black;
 }
 
-.green {
-    border: 4px solid var(--green);
-    color: var(--blue);
+.buttons-con .action-link-wrap {
+    margin-top: 40px;
 }
 
-.green:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0%;
-    height: 100%;
-    background: var(--green);
-    z-index: -1;
-    transition: 0.2s ease;
+.buttons-con .action-link-wrap a:hover {
+    background: #fff;
+    color: #142850;
+    border: 1px solid #142850;
 }
 
-.green:hover {
-    color: var(--white);
-    background: var(--green);
-    transition: 0.2s ease;
+#Polygon-1,
+#Polygon-2,
+#Polygon-3,
+#Polygon-4,
+#Polygon-4,
+#Polygon-5 {
+    animation: float 1s infinite ease-in-out alternate;
 }
 
-.green:before {
-    width: 100%;
+#Polygon-2 {
+    animation-delay: .2s;
 }
 
-@media screen and (max-width:768px) {
-    body {
-        display: block;
+#Polygon-3 {
+    animation-delay: .4s;
+}
+
+#Polygon-4 {
+    animation-delay: .6s;
+}
+
+#Polygon-5 {
+    animation-delay: .8s;
+}
+
+@keyframes float {
+    100% {
+        transform: translateY(20px);
     }
-    .container {
-        margin-top: 70px;
-        margin-bottom: 70px;
+}
+
+@media (max-width: 768px) {
+    svg {
+        width: 100%;
+        max-width: 100%;
+        margin-top: -150px;
+    }
+    .message-box {
+        text-align: center;
+        margin-right: 0px;
     }
 }

@@ -3,7 +3,7 @@
         <a href = "{{url('/')}}">
             <img src = "{{asset('img/logos/favicon.png')}}" alt = "" title = ""/>
         </a>
-        <h1>Stagi</h1>
+        <h1>Stagi.tn</h1>
     </div>
     <nav id = "nav-menu-container">
         <ul class = "nav-menu">
