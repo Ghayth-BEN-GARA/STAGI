@@ -27,6 +27,8 @@
                     $JournaleController->StoreJournal('Inscription',$CompteController->GetIdCompte($request->email));
                     $CompteController->CreerSession($request->email,$request);
                     $this->EnvoyerMailBienvenue($request->email,$request->prenom);
+                    $ImageController = new ImageController();
+                    $ImageController->StoreImage($request->email);
                     return view('profile');
                 }
 
