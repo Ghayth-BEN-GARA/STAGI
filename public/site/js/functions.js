@@ -76,7 +76,7 @@ function ValidationEmailForget(input, erreur, fa) {
 }
 
 function ValidationSujet(input, erreur) {
-    var caractere = /^[a-zA-Z 0-9?!.àèéç]*$/;
+    var caractere = /^[a-zA-Z 0-9?!.àèéç'à]*$/;
 
     if (caractere.test($(input).val())) {
         $(input).css("border", "1px solid #ced4da");
@@ -91,7 +91,7 @@ function ValidationSujet(input, erreur) {
 }
 
 function ValidationMessage(input, erreur) {
-    var caractere = /^[a-zA-Z 0-9?!.àèéç]*$/;
+    var caractere = /^[a-zA-Z 0-9?!.àèéç"'à]*$/;
 
     if (caractere.test($(input).val())) {
         $(input).css("border", "1px solid #ced4da");
