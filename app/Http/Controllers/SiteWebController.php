@@ -83,5 +83,15 @@
         public function OuvrirNotFound(){
             return view('errors.404');
         }
+
+        public function OuvrirSignin(){
+            try{
+                return view('authentification.signIn');
+            }
+
+            catch(\Exception $e){
+                return view('errors.404');
+            }
+        }
     }
 ?>

@@ -35,7 +35,7 @@
 								<div class = "hover">
 									<h4>Avez vous déjà un compte ?</h4>
 									<p>Authentifiez-vous avec votre adresse e-mail et votre mot de passe pour profiter plus d'avantages de nos services.</p>
-									<a class = "main_btn" href = "#">Connectez-vous </a>
+									<a class = "main_btn" href = "{{url('signin')}}">Connectez-vous </a>
 								</div>
 							</div>
 						</div>
@@ -145,14 +145,14 @@
 						
 					var nom = prenom = email = password = numero = naissance = false;
 					$('#nom').on('input', function(){
-						ValidationNom($('#nom'),$('#nom_erreur'));
+						ValidationNomAuth($('#nom'),$('#nom_erreur'));
 					});
 					$('#prenom').on('input', function(){
 						ValidationPrenom($('#prenom'),$('#prenom_erreur'));
 					});
 
 					$('#email').on('input', function(){
-						ValidationEmail($('#email'),$('#email_erreur'));
+						ValidationEmailAuth($('#email'),$('#email_erreur'));
 					});
 
 					$('#password').on('input', function(){

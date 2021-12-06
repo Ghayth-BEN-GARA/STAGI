@@ -34,5 +34,37 @@
         public function CreerSession($email,$request){
             $request->session()->put('email',$email);	
         }
+
+        public function Authentification(Request $request){
+            $verifierCompte = $this->VerifierCompte($request->email);
+
+            if($verifierCompte == 'personne-not-exist'){
+                return back()->with('personne-not-exist','');
+            }
+
+            else{
+                try{
+                    if(md5($request->password) != $this->GetPassword($request->email)){
+                        return back()->with('parametres-incorrecte','');
+                    }
+
+                    else{
+                        $JournaleController = new JournaleController();
+                        $JournaleController->StoreJournal('Connexion',$this->GetIdCompte($request->email));
+                        $this->CreerSession($request->email,$request);
+                        return view('profile');
+                    }
+                }
+
+                catch(\Exception $e){
+                    return view ('errors.login');
+                }
+            }
+        }
+
+        public function GetPassword($email){
+            $Compte = Compte::where('email', '=', $email)->first();
+            return $Compte->getPasswordAttribute();
+        }
     }
 ?>

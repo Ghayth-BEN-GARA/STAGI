@@ -2,6 +2,7 @@
     use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\SiteWebController;
     use App\Http\Controllers\PersonneController;
+    use App\Http\Controllers\CompteController;
 
     /*
     |--------------------------------------------------------------------------
@@ -19,4 +20,6 @@
     Route::get('/signup', [SiteWebController::class, 'OuvrirSignup'])->middleware('login');
     Route::post('/registration', [PersonneController::class, 'Registration']);
     Route::get('/not-found', [SiteWebController::class, 'OuvrirNotFound']);
+    Route::get('/signin', [SiteWebController::class, 'OuvrirSignin'])->middleware('login');
+    Route::post('/login', [CompteController::class, 'Authentification']);
 ?>
