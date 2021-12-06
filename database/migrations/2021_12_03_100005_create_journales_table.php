@@ -18,8 +18,8 @@
                 $table->date('date');
                 $table->time('temps');
                 $table->string('region',100);
-                $table->string('email',350);
-                $table->foreign('email')->references('email')->on('comptes')->onUpdate('cascade')->onDelete('cascade');
+                $table->bigInteger('identification')->unsigned();
+                $table->foreign('identification')->references('id')->on('comptes')->onUpdate('cascade')->onDelete('cascade');
             });
         }
 

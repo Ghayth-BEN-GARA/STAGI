@@ -13,7 +13,7 @@
             Schema::create('personnes', function (Blueprint $table) {
                 $table->collation = 'utf8_general_ci';
                 $table->charset = 'utf8';
-                $table->id();
+                $table->string('email',200)->primary();
                 $table->string('nom',700);
                 $table->string('prenom',700);
                 $table->string('genre',100);

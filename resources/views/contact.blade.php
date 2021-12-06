@@ -1,8 +1,7 @@
 <!DOCTYPE html>
     <html lang = "zxx" class = "no-js">
 	    <head>
-
-			<link rel = "stylesheet" href = "{{asset('css/box_alert.css')}}">
+			<link rel = "stylesheet" href = "{{asset('site/css/box_alert.css')}}">
 		    @include('layouts.head',['nom_page'=>'Contact'])
 		</head>
 		<body>
@@ -52,7 +51,7 @@
 						<div class = "col-lg-4 d-flex flex-column address-wrap">
 							<div class = "single-contact-address d-flex flex-row">
 								<div class = "icon">
-									<span class="lnr lnr-home"></span>
+									<span class = "lnr lnr-home"></span>
 								</div>
 								<div class = "contact-details">
 									<h5>Bizerte, Ghar El Melh</h5>
@@ -82,11 +81,12 @@
 						</div>
 						<div class = "col-lg-8">
 							<form class = "form-area contact-form text-right" id = "form_contact" name = "form_contact" action = "{{url('/envoyer-email-contact')}}" method = "get">
+								@csrf
 								<div class = "row">	
 									<div class = "col-lg-6 form-group">
-										<input type = "text" name = "nom_complet" id = "nom_complet" placeholder = "Entrez votre nom complet.." onfocus = "this.placeholder = ''" onblur = "this.placeholder = 'Entrez votre nom complet'" class = "common-input mb-20 form-control" required>
+										<input type = "text" name = "nom_complet" id = "nom_complet" placeholder = "Entrez votre nom complet.." onfocus = "this.placeholder = ''" onblur = "this.placeholder = 'Entrez votre nom complet..'" class = "common-input mb-20 form-control" required>
 										<span class = "error_form_contact" id = "nom_complet_erreur"></span>
-										<input type = "email" name = "email_complet" id = "email_complet" placeholder = "Entrez votre adresse e-mail complète.." onfocus = "this.placeholder = ''" onblur = "this.placeholder = 'Entrez votre adresse e-mail complète..'" class = "common-input mb-20 form-control" required>
+										<input type = "email" name = "email_complet" id = "email_complet" placeholder = "Entrez votre adresse e-mail.." onfocus = "this.placeholder = ''" onblur = "this.placeholder = 'Entrez votre adresse e-mail..'" class = "common-input mb-20 form-control" required>
 										<span class = "error_form_contact" id = "email_complet_erreur"></span>
 										<input type = "text" name = "sujet" id = "sujet" placeholder = "Entrez votre sujet.." onfocus = "this.placeholder = ''" onblur = "this.placeholder = 'Entrez votre sujet..'" class = "common-input mb-20 form-control" required>
 										<span class = "error_form_contact" id = "sujet_erreur"></span>
@@ -110,33 +110,33 @@
 			</footer>	
 			@include('layouts.scripts')
 			<script>
-			$(function(){
-				$('#nom_complet_erreur').hide();
-				$('#email_complet_erreur').hide();
-				$('#sujet_erreur').hide();
-				$('#message_erreur').hide();
-				var nomComplet = emailComplet = sujet = message = false;
+				$(function(){
+					$('#nom_complet_erreur').hide();
+					$('#email_complet_erreur').hide();
+					$('#sujet_erreur').hide();
+					$('#message_erreur').hide();
+					var nom = email = sujet = message = false;
 
-				$('#nom_complet').on('input', function(){
-					ValidationNom($('#nom_complet'),$('#nom_complet_erreur'));
-				});
+					$('#nom_complet').on('input', function(){
+						ValidationNom($('#nom_complet'),$('#nom_complet_erreur'));
+					});
 
-				$('#email_complet').on('input', function(){
-					ValidationEmail($('#email_complet'),$('#email_complet_erreur'));
-				});
+					$('#email_complet').on('input', function(){
+						ValidationEmail($('#email_complet'),$('#email_complet_erreur'));
+					});
 
-				$('#sujet').on('input', function(){
-					ValidationSujet($('#sujet'),$('#sujet_erreur'));
-				});
+					$('#sujet').on('input', function(){
+						ValidationSujet($('#sujet'),$('#sujet_erreur'));
+					});
 
-				$('#message').on('input', function(){
-					ValidationMessage($('#message'),$('#message_erreur'));
+					$('#message').on('input', function(){
+						ValidationMessage($('#message'),$('#message_erreur'));
+					});
+					
+					$('#form_contact').submit(function() {
+						EnvoiEmailContact();
+					});
 				});
-				
-				$('#form_contact').submit(function() {
-					EnvoiEmailContact();
-         		});
-			});
-		</script>
+			</script>
 		</body>
 	</html>

@@ -6,7 +6,7 @@
     use Carbon\Carbon;
 
     class SiteWebController extends Controller{
-        public function OuvrirHome(){
+        public function OuvrirHome(Request $request){
             try{
                 return view('welcome');
             }
@@ -68,6 +68,20 @@
                 return view('errors.email');
             }
             
+        }
+
+        public function OuvrirSignup(){
+            try{
+                return view('authentification.signup');
+            }
+
+            catch(\Exception $e){
+                return view('errors.404');
+            }
+        }
+
+        public function OuvrirNotFound(){
+            return view('errors.404');
         }
     }
 ?>

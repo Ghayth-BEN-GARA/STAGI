@@ -13,13 +13,13 @@
             Schema::create('comptes', function (Blueprint $table) {
                 $table->collation = 'utf8_general_ci';
                 $table->charset = 'utf8';
-                $table->string('email',350)->primary();
+                $table->id();
                 $table->string('password',999);
                 $table->string('etat',50)->default('Active');
                 $table->date('date');
                 $table->time('temps');
-                $table->bigInteger('id')->unsigned();
-                $table->foreign('id')->references('id')->on('personnes')->onUpdate('cascade')->onDelete('cascade');
+                $table->string('email',200);
+                $table->foreign('email')->references('email')->on('personnes')->onUpdate('cascade')->onDelete('cascade');
             });
         }
 

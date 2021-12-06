@@ -2,7 +2,7 @@
     <html lang = "zxx" class = "no-js">
 	    <head>
             <link rel = "stylesheet" href = "{{asset('site/css/404.css')}}">
-		    @include('layouts.head',['nom_page'=>'Email non envoyé'])
+		    @include('layouts.head',['nom_page'=>'Compte non créé'])
 		</head>
 		<body>	
 		    <header id = "header" id = "home">
@@ -16,8 +16,8 @@
 				<div class = "container">				
 					<div class = "row d-flex align-items-center justify-content-center">
 						<div class = "about-content col-lg-12">
-							<h1 class = "text-white">Email</h1>	
-							<p class = "text-white link-nav"><a href = "{{url('/')}}">Accueil</a><span class = "lnr lnr-arrow-right"></span><a href = "{{url('/email')}}"> Email non envoyé</a></p>
+							<h1 class = "text-white">Compte</h1>	
+							<p class = "text-white link-nav"><a href = "{{url('/')}}">Accueil</a><span class = "lnr lnr-arrow-right"></span><a href = "{{url('/compte')}}"> Compte non créé</a></p>
 						</div>	
 					</div>
 				</div>
@@ -36,8 +36,8 @@
                                 </g>
                             </svg>
                             <div class = "message-box">
-                                <h1>Email non envoyé</h1>
-                                <p>Pour des raisons techniques, votre message ne peut pas être envoyé.</p>
+                                <h1>Compte non créé</h1>
+                                <p>Pour des raisons techniques, votre compte ne peut pas être créé.</p>
                                 <div class = "buttons-con">
                                     <div class = "action-link-wrap">
                                         <a href = "{{url('/')}}" class = "primary-btn text-uppercase">Aller à la page d'accueil</a>

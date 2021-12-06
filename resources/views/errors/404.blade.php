@@ -1,8 +1,8 @@
 <!DOCTYPE html>
     <html lang = "zxx" class = "no-js">
 	    <head>
-            <link rel = "stylesheet" href = "{{asset('css/404.css')}}">
 		    @include('layouts.head',['nom_page'=>'Page introuvable'])
+            <link rel = "stylesheet" href = "{{asset('site/css/404.css')}}">
 		</head>
 		<body>	
 		    <header id = "header" id = "home">
