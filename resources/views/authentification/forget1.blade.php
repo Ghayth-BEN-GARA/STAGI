@@ -43,7 +43,7 @@
                                                                     <div class = "new-message-box-danger">
                                                                         <div class = "info-tab tip-icon-danger" title = "danger"><i></i></div>
                                                                         <div class = "tip-box-danger">
-                                                                            <p style = 'color: #b71c1c;'>
+                                                                            <p style = 'color: #b71c1c;font-weight:600'>
                                                                                 Aucun compte trouvé avec cette adresse e-mail.
                                                                             </p>
                                                                         </div>
