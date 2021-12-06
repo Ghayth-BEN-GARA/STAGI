@@ -43,16 +43,18 @@
 							<div class = "login_form_inner">
 								<h3>Créer un nouveau compte</h3>
 								@if(Session::has('personne-exist'))
-									<div class = "container-fluid text-center col-lg-12 position-alert">
-										<div class = "row">
-											<div class = "col-xs-12 col-sm-12 col-sm-offset-3">
-												<div class = "new-message-box">
-													<div class = "new-message-box-danger">
-														<div class = "info-tab tip-icon-danger" title = "danger"><i></i></div>
-														<div class = "tip-box-danger">
-															<p>
-																Un autre compte a été créé avec cette adresse e-mail.
-															</p>
+									<div class = "position_erreur">
+										<div class = "container-fluid text-center col-lg-12 position-alert">
+											<div class = "row">
+												<div class = "col-xs-12 col-sm-12 col-sm-offset-3">
+													<div class = "new-message-box">
+														<div class = "new-message-box-danger">
+															<div class = "info-tab tip-icon-danger" title = "danger"><i></i></div>
+															<div class = "tip-box-danger">
+																<p>
+																	Un autre compte a été créé avec cette adresse e-mail.
+																</p>
+															</div>
 														</div>
 													</div>
 												</div>

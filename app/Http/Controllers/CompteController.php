@@ -79,5 +79,23 @@
             Session::forget('email');
             Session::flush();
         }
+
+        public function RechercherCompte(Request $request){
+            $verifierCompte = $this->VerifierCompte($request->email);
+
+            try{
+                if($verifierCompte == 'personne-not-exist'){
+                    return back()->with('compte-not-exist','');
+                }
+
+                else{
+                    return view('authentification.forget2');
+                }
+            }
+
+            catch(\Exception $e){
+                return view ('errors.404');
+            }
+        }
     }
 ?>

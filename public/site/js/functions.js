@@ -58,6 +58,23 @@ function ValidationEmailAuth(input, erreur) {
     }
 }
 
+function ValidationEmailForget(input, erreur, fa) {
+    var caractere = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+    if (caractere.test($(input).val())) {
+        $(input).css("border", "1px solid #ced4da");
+        $(fa).css("border", "1px solid #ced4da");
+        $(erreur).hide();
+        email = true;
+    } else {
+        $(input).css("border", "1px solid #ff726f");
+        $(fa).css("border", "1px solid #ff726f");
+        $(erreur).html("La format d'adresse e-mail invalide..");
+        $(erreur).show();
+        email = false;
+    }
+}
+
 function ValidationSujet(input, erreur) {
     var caractere = /^[a-zA-Z 0-9?!.àèéç]*$/;
 
@@ -254,4 +271,12 @@ function Deconnexion() {
 
 function OuvrirLogin() {
     location.href = "/signin";
+}
+
+function RechercherCompte() {
+    if (email == true) {
+        $("#form_forget1").submit();
+    } else {
+        event.preventDefault();
+    }
 }

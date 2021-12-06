@@ -93,5 +93,15 @@
                 return view('errors.404');
             }
         }
+
+        public function OuvrirForget1(){
+            try{
+                return view('authentification.forget1');
+            }
+
+            catch(\Exception $e){
+                return view('errors.404');
+            }
+        }
     }
 ?>

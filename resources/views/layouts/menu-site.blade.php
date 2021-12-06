@@ -11,7 +11,7 @@
             @if(session()->has('email'))
                 <li class = "menu-has-children"><a href = "javascript: void(0)">{{ App\Http\Controllers\PersonneController::GetNomPrenom(Session()->get('email')); }}</a>
                     <ul>
-                        <li><a href = "javascript: void(0)">Profil</a></li>
+                        <li><a href = "javascript: void(0)">Profile</a></li>
                         <li onclick = "QuestionDeconnexion()"><a href = "javascript: void(0)">Déconnexion</a></li>
                     </ul>
                 </li>

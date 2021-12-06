@@ -23,4 +23,6 @@
     Route::get('/signin', [SiteWebController::class, 'OuvrirSignin'])->middleware('login');
     Route::post('/login', [CompteController::class, 'Authentification']);
     Route::get('/gestion-deconnexion', [CompteController::class, 'GestionDeconnexion']);
+    Route::get('/forget1', [SiteWebController::class, 'OuvrirForget1'])->middleware('login');
+    Route::post('/rechercher-compte-forget1', [CompteController::class, 'RechercherCompte'])->middleware('login');
 ?>
