@@ -15,3 +15,5 @@
 <link rel = "stylesheet" href = "{{asset('site/css/owl.carousel.css')}}">			
 <link rel = "stylesheet" href = "{{asset('site/css/jquery-ui.css')}}">			
 <link rel = "stylesheet" href = "{{asset('site/css/main.css')}}">
+<link rel = "stylesheet" href = "{{asset('site/css/rechercher.css')}}">
+<link rel = "stylesheet" href = "{{asset('site/css/sweetalert2.css')}}">

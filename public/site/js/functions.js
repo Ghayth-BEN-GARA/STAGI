@@ -207,3 +207,51 @@ function Authentification() {
         event.preventDefault();
     }
 }
+
+function QuestionDeconnexion() {
+    swal({
+        title: "Vous êtes sur ?",
+        text: "Votre session sera fermée automatiquement !",
+        type: 'warning',
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonColor: '#142850',
+        cancelButtonColor: '#d33',
+        focusConfirm: true,
+        confirmButtonText: "Déconnecter",
+        cancelButtonText: 'Annuler'
+    })
+
+    .then((result) => {
+        if (result.value) {
+            Chargement().then(Deconnexion()).then(OuvrirLogin());
+        } else if (result.dismiss === swal.DismissReason.cancel) {
+            swal.close();
+        }
+    });
+}
+
+async function Chargement() {
+    swal({
+        text: "Patienter s'il vous plait..",
+        allowEscapeKey: false,
+        allowOutsideClick: false,
+        padding: "2em",
+        width: "300px",
+        onOpen: () => {
+            swal.showLoading();
+        }
+    })
+}
+
+function Deconnexion() {
+    $.ajax({
+        url: "/gestion-deconnexion",
+        cache: true,
+        type: "get"
+    });
+}
+
+function OuvrirLogin() {
+    location.href = "/signin";
+}

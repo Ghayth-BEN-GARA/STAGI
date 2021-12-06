@@ -71,6 +71,9 @@
             $mailConfirmation->send();
         }
 
-        
+        public static function GetNomPrenom($email){
+            $Personne = Personne::where('email', '=', $email)->first();
+            return $Personne->getPrenomAttribute().' '.$Personne->getNomAttribute();
+        }
     }
 ?>

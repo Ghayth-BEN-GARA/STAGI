@@ -66,5 +66,18 @@
             $Compte = Compte::where('email', '=', $email)->first();
             return $Compte->getPasswordAttribute();
         }
+
+        public function GestionDeconnexion(Request $request){
+            $email = $request->session()->get('email');
+            $JournaleController = new JournaleController();
+            $JournaleController->StoreJournal('Déconnexion',$this->GetIdCompte($email));
+            $this->LogOut();
+        }
+
+        public function LogOut(){
+            Session::pull('email');
+            Session::forget('email');
+            Session::flush();
+        }
     }
 ?>

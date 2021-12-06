@@ -22,4 +22,5 @@
     Route::get('/not-found', [SiteWebController::class, 'OuvrirNotFound']);
     Route::get('/signin', [SiteWebController::class, 'OuvrirSignin'])->middleware('login');
     Route::post('/login', [CompteController::class, 'Authentification']);
+    Route::get('/gestion-deconnexion', [CompteController::class, 'GestionDeconnexion']);
 ?>

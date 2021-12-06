@@ -12,3 +12,4 @@
 <script src = "{{asset('site/js/owl.carousel.min.js')}}"></script>									
 <script src = "{{asset('site/js/main.js')}}"></script>	
 <script src = "{{asset('site/js/functions.js')}}"></script>	
+<script src = "{{asset('site/js/sweetalert2.all.min.js')}}"></script>	
