@@ -1,6 +1,7 @@
 <?php
     namespace App\Models;
     use Illuminate\Database\Eloquent\Model;
+    use Date;
 
     class Personne extends Model{
         protected $table = 'personnes';
@@ -79,6 +80,10 @@
             $ch2 = substr($numero, 2, 3); 
             $ch3 = substr($numero, 5, 3); 
             return($ch1." ".$ch2." ".$ch3." ");
+        }
+
+        public function naissanceFormatter(){ 
+            return (date('D d F Y',strtotime($this->attributes['naissance'])));
         }
     }
 ?>

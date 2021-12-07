@@ -99,7 +99,60 @@
         }
 
         public function OuvrirProfil(Request $request){
-            return view('profile');
+            $email = $this->GetEmailSessionActive($request);
+            $dataP = $this->GetDataSessionActive($email);
+            return view('profile',compact('dataP'));
+        }
+
+        public function GetEmailSessionActive(Request $request){
+            return ($request->session()->get('email'));
+        }
+
+        public function GetDataSessionActive($email){
+            $ImageController = new ImageController();
+            $photo = $ImageController->GetPhoto($email);
+
+            $CompteController = new CompteController();
+            $id = $CompteController->GetIdCompte($email);
+
+            $data = [
+                "nomComplet" => $this->GetNomPrenom($email),
+                "photo" => $photo,
+                "profession" => $this->GetProfession($email),
+                "id" => $id,
+                "nom" => $this->GetNom($email),
+                "prenom" => $this->GetPrenom($email),
+                "email" => $email,
+                "genre" => $this->GetGenre($email),
+                "numero" =>$this->GetNumeroFormatter($email),
+                "naissance" => $this->GetNaissanceFormatter($email)
+            ];
+            return $data;
+        }
+
+        public function GetProfession($email){
+            $Personne = Personne::where('email', '=', $email)->first();
+            return $Personne->getProfessionAttribute();
+        }
+
+        public function GetNom($email){
+            $Personne = Personne::where('email', '=', $email)->first();
+            return $Personne->getNomAttribute();
+        }
+
+        public function GetPrenom($email){
+            $Personne = Personne::where('email', '=', $email)->first();
+            return $Personne->getPrenomAttribute();
+        }
+
+        public function GetGenre($email){
+            $Personne = Personne::where('email', '=', $email)->first();
+            return $Personne->getGenreAttribute();
+        }
+
+        public function GetNaissanceFormatter($email){
+            $Personne = Personne::where('email', '=', $email)->first();
+            return $Personne->naissanceFormatter();
         }
     }
 ?>
