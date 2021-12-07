@@ -309,5 +309,54 @@ function CodeSecurite() {
         $('#erreur').hide();
         $("#form_forget3").submit();
     }
+}
 
+function ValidationPasswordUpdate(input, erreur, test) {
+    if (input.val().length == 0) {
+        $(input).css("border", "1px solid #ced4da");
+        $(erreur).hide();
+        test = true;
+    } else {
+        if (input.val().length < 8) {
+            $(input).css("border", "1px solid #ff726f");
+            $(erreur).html("Le mot de passe fait moins de 8 caractères..");
+            $(erreur).show();
+            test = false;
+        } else if (!input.val().match(/([a-z])/)) {
+            $(input).css("border", "1px solid #ff726f");
+            $(erreur).html("Le mot de passe doit contenir au moin un lettre minuscule..");
+            $(erreur).show();
+            test = false;
+        } else if (!input.val().match(/([A-Z])/)) {
+            $(input).css("border", "1px solid #ff726f");
+            $(erreur).html("Le mot de passe doit contenir au moin un lettre majuscule..");
+            $(erreur).show();
+            test = false;
+        } else if (!input.val().match(/([0-9])/)) {
+            $(input).css("border", "1px solid #ff726f");
+            $(erreur).html("Le mot de passe doit contenir au moin un chiffre..");
+            $(erreur).show();
+            test = false;
+        } else if (!input.val().match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
+            $(input).css("border", "1px solid #ff726f");
+            $(erreur).html("Le mot de passe doit contenir au moin un caractére spéciale..");
+            $(erreur).show();
+            test = false;
+        } else {
+            $(input).css("border", "1px solid #ced4da");
+            $(erreur).hide();
+            test = true;
+        }
+    }
+    $('#erreur').hide();
+}
+
+function ValiderModifierPassword() {
+    if ($('#password').val() != $('#confirm_password').val()) {
+        $('#erreur').show();
+        event.preventDefault();
+    } else {
+        $('#erreur').hide();
+        $("#form_forget4").submit();
+    }
 }

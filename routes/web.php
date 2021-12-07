@@ -26,6 +26,7 @@
     Route::get('/forget1', [SiteWebController::class, 'OuvrirForget1'])->middleware('login');
     Route::post('/rechercher-compte-forget1', [CompteController::class, 'RechercherCompte'])->middleware('login');
     Route::post('/send-code-to-personne', [CompteController::class, 'EnvoyerCodeSecurite'])->middleware('login');
-    Route::post('/forget4', [CompteController::class, 'OuvrirForget4']);
-   
+    Route::post('/gestion-forget4', [CompteController::class, 'GestionOuvrirForget4']);
+    Route::get('/forget4/{email}', [SiteWebController::class, 'OuvrirForget4'])->name('forget4')->middleware('login');
+    Route::post('/gestion-modifier-password-forget4', [CompteController::class, 'GestionUpdatePasswordForget']);
 ?>

@@ -190,14 +190,63 @@
             return view('authentification.forget3',compact('code','email'));
         }
 
-        public function OuvrirForget4(Request $request){
+        public function GestionOuvrirForget4(Request $request){
             $email = $request->email;
+            try{
+                return redirect()->route('forget4',[$email])->with('compte-recuperer','');
+            }
+
+            catch(\Exception $e){
+                return view ('errors.recuperation');
+            }
+        }
+
+        public function OuvrirForget4(){
             try{
                 return view('authentification.forget4',compact('email'))->with('compte-recuperer','');
             }
 
             catch(\Exception $e){
                 return view ('errors.recuperation');
+            }
+        }
+
+        public function GestionUpdatePasswordForget(Request $request){
+            $oldPassword = $this->GetPassword($request->email);
+
+            try{
+                if($oldPassword == md5($request->password)){
+                    return back()->with('same-old-password','');
+                }
+
+                else{
+                    if($this->UpdatePassword($request->email,$request->password)){
+                        $JournaleController = new JournaleController();
+                        $JournaleController->StoreJournal('Récupération',$this->GetIdCompte($request->email));
+                        $this->CreerSession($request->email,$request);
+                        return view('profile');
+                    }
+
+                    else{
+                        return view ('errors.recuperation');
+                    }
+                }
+            }
+
+            catch(\Exception $e){
+                return view ('errors.recuperation');
+            }
+        }
+
+        public function UpdatePassword($email,$password){
+            $Compte = Compte::where('email',$email)->update(['password'=>md5($password)]);
+
+            if($Compte){
+                return ('password-update');
+            }
+
+            else{
+                return ('password-not-update');
             }
         }
     }

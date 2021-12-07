@@ -34,7 +34,7 @@
                                     <p>Veuillez vérifier dans vos e-mails que vous avez reçu un message contenant votre code. Celui-ci se compose de 8 chiffres.</p>
                                     <div class = "form-group d-flex flex-row">
                                         <div class = "col-autos">
-                                            <div class = "position_erreur"  id = "erreur">
+                                            <div class = "position_erreur"  id = "erreur" style = "display:none">
                                                 <div class = "container-fluid text-center col-lg-12 position-alert">
                                                     <div class = "row">
                                                         <div class = "col-xs-12 col-sm-12 col-sm-offset-3">
@@ -52,7 +52,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <form name = "form_forget3" id = "form_forget3" method = "post" action = "{{url('/forget4')}}">
+                                            <form name = "form_forget3" id = "form_forget3" method = "post" action = "{{url('/gestion-forget4')}}">
                                                 @csrf
                                                 <div class = "input-group">
                                                     <div class = "input-group-prepend">
