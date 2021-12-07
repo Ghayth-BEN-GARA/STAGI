@@ -72,5 +72,13 @@
         public function setProfessionAttribute($value){
             $this->attributes['profession'] = $value;
         }
+
+        public function numeroFormatter(){
+            $numero = $this->attributes['numero'];
+            $ch1 = substr($numero, 0, 2); 
+            $ch2 = substr($numero, 2, 3); 
+            $ch3 = substr($numero, 5, 3); 
+            return($ch1." ".$ch2." ".$ch3." ");
+        }
     }
 ?>

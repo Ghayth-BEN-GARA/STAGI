@@ -93,5 +93,10 @@
             $Personne = Personne::where('email', '=', $email)->first();
             return $Personne->getPrenomAttribute().' '.$Personne->getNomAttribute();
         }
+
+        public function GetNumeroFormatter($email){
+            $Personne = Personne::where('email', '=', $email)->first();
+            return $Personne->numeroFormatter();
+        }
     }
 ?>

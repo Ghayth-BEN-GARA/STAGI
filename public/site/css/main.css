@@ -5052,3 +5052,101 @@ dl.toggle.time-line:before {
     margin-top: 100px;
     max-width: 100%;
 }
+
+.photo-profil {
+    display: block;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.name-forget {
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 10px;
+    color: #142850;
+}
+
+.champ-forget {
+    font-size: 11px;
+    text-align: center;
+    width: auto;
+    max-width: 100%;
+    margin-top: -28px;
+}
+
+#position-email-number {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+#position-numero,
+#position-email {
+    margin-left: 15px;
+    max-width: 100%;
+}
+
+#position-numero b,
+#position-email {
+    font-weight: 700;
+    margin: auto;
+    padding: auto;
+}
+
+.submit_btn {
+    display: inline-block;
+    background: #142850;
+    padding: 0px 30px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 38px;
+    border: 1px solid #142850;
+    border-radius: 0px;
+    outline: none !important;
+    box-shadow: none !important;
+    text-align: center;
+    border: 1px solid #142850;
+    cursor: default;
+    transition: all 300ms linear 0s;
+}
+
+.submit_btn:hover {
+    background-color: #fff;
+    border: 1px solid #142850;
+    color: #142850;
+}
+
+.reset {
+    background-color: #fff;
+    border-color: 1px solid #142850;
+    color: #142850;
+}
+
+.reset:hover {
+    background-color: #ccc;
+}
+
+#position-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 25px;
+}
+
+@media (max-width: 399px) {
+    .submit_btn {
+        margin-top: 8px;
+    }
+}

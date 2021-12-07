@@ -9,5 +9,10 @@
             $Image->setEmailAttribute($email);
             $Image->save();
         }
+
+        public function GetPhoto($email){
+            $Image = Image::where('email', '=', $email)->first();
+            return $Image->getPhotoAttribute();
+        }
     }
 ?>

@@ -25,4 +25,5 @@
     Route::get('/gestion-deconnexion', [CompteController::class, 'GestionDeconnexion']);
     Route::get('/forget1', [SiteWebController::class, 'OuvrirForget1'])->middleware('login');
     Route::post('/rechercher-compte-forget1', [CompteController::class, 'RechercherCompte'])->middleware('login');
+    Route::post('/send-code-to-personne', [CompteController::class, 'EnvoyerCodeSecurite']);
 ?>

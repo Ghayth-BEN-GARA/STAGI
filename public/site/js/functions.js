@@ -280,3 +280,7 @@ function RechercherCompte() {
         event.preventDefault();
     }
 }
+
+function OuvrirForget1() {
+    location.href = "/forget1";
+}
