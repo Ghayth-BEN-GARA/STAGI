@@ -80,6 +80,25 @@
 											</div>
 										</div>
 									</div>
+								@elseif (Session::has('not-loged'))
+									<div class = "position_erreur">
+										<div class = "container-fluid text-center col-lg-12 position-alert">
+											<div class = "row">
+												<div class = "col-xs-12 col-sm-12 col-sm-offset-3">
+													<div class = "new-message-box">
+														<div class = "new-message-box-danger">
+															<div class = "info-tab tip-icon-danger" title = "danger"><i></i></div>
+															<div class = "tip-box-danger">
+																<p>
+																	Vous ne pouvez pas consulter à la page demandée car vous êtes hors ligne.
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								@endif
 								<form class = "row login_form" action = "{{url('/login')}}" method = "post" id = "form_signin" name = "form_signin">
 									@csrf
