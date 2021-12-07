@@ -101,7 +101,7 @@
         public function OuvrirProfil(Request $request){
             $email = $this->GetEmailSessionActive($request);
             $dataP = $this->GetDataSessionActive($email);
-            return view('profile',compact('dataP'));
+            return view('profils.profile',compact('dataP'));
         }
 
         public function GetEmailSessionActive(Request $request){
@@ -153,6 +153,12 @@
         public function GetNaissanceFormatter($email){
             $Personne = Personne::where('email', '=', $email)->first();
             return $Personne->naissanceFormatter();
+        }
+
+        public function OuvrirUpdateImage(Request $request){
+            $email = $this->GetEmailSessionActive($request);
+            $dataP = $this->GetDataSessionActive($email);
+            return view('profils.modifier_image',compact('dataP'));
         }
     }
 ?>

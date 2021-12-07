@@ -79,7 +79,7 @@
                                             	<img src = "{{asset('uploads/images/'.$dataP['nomComplet'].'/'.$dataP['photo'])}}" alt = "Photo de {{$dataP['nomComplet']}}">
 											@endif
                             				<div class = "file btn btn-lg btn-primary">
-                                				<a href = "#" style = "color:#fff">Changer l'image</a>
+                                				<a href = "{{url('/photo-profile')}}" style = "color:#fff">Changer l'image</a>
                             				</div>                           
                         				</div>
                     				</div>

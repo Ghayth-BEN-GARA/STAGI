@@ -3,6 +3,7 @@
     use App\Http\Controllers\SiteWebController;
     use App\Http\Controllers\PersonneController;
     use App\Http\Controllers\CompteController;
+    use App\Http\Controllers\ImageController;
 
     /*
     |--------------------------------------------------------------------------
@@ -30,5 +31,8 @@
     Route::get('/forget4/{email}', [SiteWebController::class, 'OuvrirForget4'])->name('forget4')->middleware('login');
     Route::post('/gestion-modifier-password-forget4', [CompteController::class, 'GestionUpdatePasswordForget']);
     Route::get('/profile', [PersonneController::class, 'OuvrirProfil'])->name('profileAuth')->middleware('notLoged');
-    
+    Route::get('/photo-profile', [PersonneController::class, 'OuvrirUpdateImage'])->middleware('notLoged');
+    Route::post('/update-image-profile', [ImageController::class, 'GestionUpdateImageProfile']);
 ?>
+
+

@@ -121,3 +121,18 @@
     color: black;
     font-weight: bolder;
 }
+
+#image_profile {
+    max-width: 100%;
+}
+
+.desc-vide {
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    padding: 25px;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 1.5;
+}
