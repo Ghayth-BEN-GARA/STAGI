@@ -5150,3 +5150,7 @@ dl.toggle.time-line:before {
         margin-top: 8px;
     }
 }
+
+.margin-email {
+    margin-top: -7px;
+}

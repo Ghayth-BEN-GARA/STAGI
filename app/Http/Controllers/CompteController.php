@@ -189,5 +189,16 @@
         public function OuvrirForget3($code, $email){
             return view('authentification.forget3',compact('code','email'));
         }
+
+        public function OuvrirForget4(Request $request){
+            $email = $request->email;
+            try{
+                return view('authentification.forget4',compact('email'))->with('compte-recuperer','');
+            }
+
+            catch(\Exception $e){
+                return view ('errors.recuperation');
+            }
+        }
     }
 ?>

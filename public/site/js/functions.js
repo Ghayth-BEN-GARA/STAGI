@@ -284,3 +284,30 @@ function RechercherCompte() {
 function OuvrirForget1() {
     location.href = "/forget1";
 }
+
+function ValidationCodeSecurite(input, erreur) {
+    if (input.val().length == 8 || input.val().length == 0) {
+        $(input).css("border-bottom", "1px solid #ced4da");
+        $(erreur).hide();
+        code = true;
+    } else {
+        $(input).css("border-bottom", "1px solid #ff726f");
+        $(erreur).html("Le code doit être composé de 8 chiffres..");
+        $(erreur).show();
+        code = false;
+    }
+}
+
+function CodeSecurite() {
+    var codeSaisie = $("#code").val();
+    var oldCode = $("#oldCode").val();
+
+    if (codeSaisie != oldCode) {
+        $('#erreur').show();
+        event.preventDefault();
+    } else {
+        $('#erreur').hide();
+        $("#form_forget3").submit();
+    }
+
+}

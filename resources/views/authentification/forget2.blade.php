@@ -4,7 +4,7 @@
 			@include('layouts.head',['nom_page'=>'Récupération'])
             <link rel = "stylesheet" href = "{{asset('site/css/box_alert.css')}}">
 		</head>
-         <body>
+        <body>
 			<header id = "header" id = "home">
 	  		    @include('layouts.header-top')
 		        <div class = "container main-menu">
