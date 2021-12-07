@@ -3163,8 +3163,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 .accordion>dt>a.active {
     color: #fff;
     border-color: #ddd;
-    background: #f7631b;
-    cursor: default
+    background: #142850;
+    cursor: pointer;
 }
 
 .accordion>dt>a:after {

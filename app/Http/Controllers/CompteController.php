@@ -214,5 +214,12 @@
                 return ('password-not-update');
             }
         }
+
+        public function OuvrirParametresCompte(Request $request){
+            $PersonneController = new PersonneController();
+            $email = $PersonneController->GetEmailSessionActive($request);
+            $dataP = $PersonneController->GetDataSessionActive($email);
+            return view('profils.parametres_profil',compact('dataP'));
+        }
     }
 ?>

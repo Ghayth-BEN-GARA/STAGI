@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang = "zxx" class = "no-js">
 	    <head>
-			@include('layouts.head',['nom_page'=>'Profil'])
+			@include('layouts.head',['nom_page' => $dataP['nomComplet']])
 			<link rel = "stylesheet" href = "{{asset('site/css/box_alert.css')}}">
 			<link rel = "stylesheet" href = "{{asset('site/css/profile.css')}}">
 		</head>

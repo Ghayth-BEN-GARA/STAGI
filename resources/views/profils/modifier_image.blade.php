@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang = "zxx" class = "no-js">
 	    <head>
-			@include('layouts.head',['nom_page'=> "Image de profil"])
+			@include('layouts.head',['nom_page'=> $dataP['nomComplet']])
 			<link rel = "stylesheet" href = "{{asset('site/css/box_alert.css')}}">
 			<link rel = "stylesheet" href = "{{asset('site/css/profile.css')}}">
 		</head>
@@ -138,7 +138,8 @@
                             				<div class = "file btn btn-lg btn-primary">
                                 				<a href = "{{url('/photo-profile')}}" style = "color:#fff">Changer l'image</a>
                             				</div>  
-                                            <h5>{{$dataP['nomComplet']}}</h5>                         
+                                            <h5>{{$dataP['nomComplet']}}</h5>    
+											<p id = "titre-style">(Titre)</p>                     
                         				</div>   
                     				</div>
 									<div class = "col-md-6">
