@@ -30,4 +30,5 @@
     Route::get('/forget4/{email}', [SiteWebController::class, 'OuvrirForget4'])->name('forget4')->middleware('login');
     Route::post('/gestion-modifier-password-forget4', [CompteController::class, 'GestionUpdatePasswordForget']);
     Route::get('/profile', [PersonneController::class, 'OuvrirProfil'])->name('profileAuth')->middleware('notLoged');
+    
 ?>

@@ -29,6 +29,45 @@
 				<div class = "container">
 					<div class = "row">
 						<div class = "container emp-profile">
+							@if(Session::has('compte-creer'))
+								<div class = "position_erreur">
+									<div class = "container-fluid text-center col-lg-12 position-alert">
+										<div class = "row">
+											<div class = "col-xs-12 col-sm-12 col-sm-offset-3">
+												<div class = "new-message-box">
+													<div class = "new-message-box-success">
+														<div class = "info-tab tip-icon-success" title = "success"><i></i></div>
+														<div class = "tip-box-success">
+															<p>
+																Votre nouveau compte a été créé avec succès. Si vous rencontrez des problèmes avec votre compte, contactez-nous depuis la page Contact</p>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							@elseif(Session::has('compte-recuperer'))
+								<div class = "position_erreur">
+									<div class = "container-fluid text-center col-lg-12 position-alert">
+										<div class = "row">
+											<div class = "col-xs-12 col-sm-12 col-sm-offset-3">
+												<div class = "new-message-box">
+													<div class = "new-message-box-success">
+														<div class = "info-tab tip-icon-success" title = "success"><i></i></div>
+														<div class = "tip-box-success">
+															<p>
+																Votre compte a été récupéré avec succès. Si vous rencontrez des problèmes avec votre compte, contactez-nous depuis la page Contact</p>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							@endif
 							<form method = "post" name = "form_profil" id = "form_profil" action = "#">
 								@csrf
 								<div class = "row">
@@ -41,7 +80,7 @@
 											@endif
                             				<div class = "file btn btn-lg btn-primary">
                                 				<a href = "#" style = "color:#fff">Changer l'image</a>
-                            				</div>
+                            				</div>                           
                         				</div>
                     				</div>
 									<div class = "col-md-6">
@@ -119,7 +158,7 @@
                                                 		<label class = "label-p">Adresse e-mail</label>
                                             		</div>
                                             		<div class = "col-md-6">
-                                                		<p>{{$dataP['email']}} <span class = "label-p">(Privé)</span></p>
+                                                		<p>{{$dataP['email']}}</p>
                                             		</div>
                                         		</div>
 												<div class = "row">
