@@ -19,7 +19,7 @@
 					<div class = "row d-flex align-items-center justify-content-center">
 						<div class = "about-content col-lg-12">
 							<h1 class = "text-white">
-								Inscription			
+								Connexion			
 							</h1>	
 							<p class = "text-white link-nav"><a href = "{{url('/')}}">Accueil </a><span class = "lnr lnr-arrow-right"></span><a href = "{{url('/signin')}}">Connexion</a></p>
 						</div>	
@@ -90,7 +90,7 @@
 															<div class = "info-tab tip-icon-danger" title = "danger"><i></i></div>
 															<div class = "tip-box-danger">
 																<p>
-																	Vous ne pouvez pas consulter à la page demandée car vous êtes hors ligne.
+																	Vous ne pouvez pas consulter la page demandée car vous êtes hors ligne.
 																</p>
 															</div>
 														</div>

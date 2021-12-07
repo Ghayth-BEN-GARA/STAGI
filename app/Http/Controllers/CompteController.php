@@ -45,21 +45,15 @@
             }
 
             else{
-                try{
-                    if(md5($request->password) != $this->GetPassword($request->email)){
-                        return back()->with('parametres-incorrecte','');
-                    }
-
-                    else{
-                        $JournaleController = new JournaleController();
-                        $JournaleController->StoreJournal('Connexion',$this->GetIdCompte($request->email));
-                        $this->CreerSession($request->email,$request);
-                        return view('profile');
-                    }
+                if(md5($request->password) <> $this->GetPassword($request->email)){
+                    return back()->with('parametres-incorrecte','');
                 }
 
-                catch(\Exception $e){
-                    return view ('errors.login');
+                else{
+                    $JournaleController = new JournaleController();
+                    $JournaleController->StoreJournal('Connexion',$this->GetIdCompte($request->email));
+                    $this->CreerSession($request->email,$request);
+                    return redirect()->route('profileAuth');
                 }
             }
         }
@@ -85,19 +79,13 @@
         public function RechercherCompte(Request $request){
             $verifierCompte = $this->VerifierCompte($request->email);
 
-            try{
-                if($verifierCompte == 'personne-not-exist'){
-                    return back()->with('compte-not-exist','');
-                }
-
-                else{
-                    $data = $this->GetDataForget($request->email);
-                    return view('authentification.forget2',compact('data'));
-                }
+            if($verifierCompte == 'personne-not-exist'){
+                return back()->with('compte-not-exist','');
             }
 
-            catch(\Exception $e){
-                return view ('errors.404');
+            else{
+                $data = $this->GetDataForget($request->email);
+                return view('authentification.forget2',compact('data'));
             }
         }
 
@@ -121,19 +109,14 @@
 
         public function EnvoyerCodeSecurite(Request $request){
             $code = $this->GenererCodeSecurite();
-            try{
-                if($this->CodeSecuriteParMail($request->email,$code,$request->nomComplet) == 'mail-sent'){
-                    return ($this->OuvrirForget3($code,$request->email));
-                }
-
-                else{
-                    return view ('errors.recuperation');
-                }
+            
+            if($this->CodeSecuriteParMail($request->email,$code,$request->nomComplet) == 'mail-sent'){
+                return ($this->OuvrirForget3($code,$request->email));
             }
 
-            catch(\Exception $e){
+            else{
                 return view ('errors.recuperation');
-            }
+            }  
         }
 
         public function GenererCodeSecurite(){
@@ -192,49 +175,31 @@
 
         public function GestionOuvrirForget4(Request $request){
             $email = $request->email;
-            try{
-                return redirect()->route('forget4',[$email])->with('compte-recuperer','');
-            }
-
-            catch(\Exception $e){
-                return view ('errors.recuperation');
-            }
+            return redirect()->route('forget4',[$email])->with('compte-recuperer','');
         }
 
         public function OuvrirForget4(){
-            try{
-                return view('authentification.forget4',compact('email'))->with('compte-recuperer','');
-            }
-
-            catch(\Exception $e){
-                return view ('errors.recuperation');
-            }
+            return view('authentification.forget4',compact('email'))->with('compte-recuperer','');
         }
 
         public function GestionUpdatePasswordForget(Request $request){
             $oldPassword = $this->GetPassword($request->email);
 
-            try{
-                if($oldPassword == md5($request->password)){
-                    return back()->with('same-old-password','');
+            if($oldPassword == md5($request->password)){
+                return back()->with('same-old-password','');
+            }
+
+            else{
+                if($this->UpdatePassword($request->email,$request->password) == 'password-update'){
+                    $JournaleController = new JournaleController();
+                    $JournaleController->StoreJournal('Récupération',$this->GetIdCompte($request->email));
+                    $this->CreerSession($request->email,$request);
+                    return redirect()->route('profileAuth')->with('compte-recuperer','');
                 }
 
                 else{
-                    if($this->UpdatePassword($request->email,$request->password)){
-                        $JournaleController = new JournaleController();
-                        $JournaleController->StoreJournal('Récupération',$this->GetIdCompte($request->email));
-                        $this->CreerSession($request->email,$request);
-                        return view('profile');
-                    }
-
-                    else{
-                        return view ('errors.recuperation');
-                    }
+                    return view ('errors.recuperation');
                 }
-            }
-
-            catch(\Exception $e){
-                return view ('errors.recuperation');
             }
         }
 

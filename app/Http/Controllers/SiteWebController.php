@@ -6,23 +6,11 @@
 
     class SiteWebController extends Controller{
         public function OuvrirHome(Request $request){
-            try{
-                return view('welcome');
-            }
-
-            catch(\Exception $e){
-                return view('errors.404');
-            }
+            return view('welcome');
         }
 
         public function OuvrirContact(){
-            try{
-                return view('contact');
-            }
-
-            catch(\Exception $e){
-                return view('errors.404');
-            }
+            return view('contact');
         }
 
         public function EnvoyerEmail(Request $request){
@@ -73,25 +61,18 @@
                                         </div>
                                         <div style = 'width:190px;max-width:190px;font-family:'Lucida Grande',Tahoma;font-size:12px;margin-top:0.5em;color:rgb(102,102,102);letter-spacing:2px;border-left-width:2px;border-left-style:solid;border-left-color:rgb(251,224,181);padding-top:3px;padding-left:10px;overflow:hidden'></div>
                                     </div>";
-            try{
-                $mailContact->send();
+            if($mailContact->send()){
                 return back()->with('email-sent', '');
             }
-                        
-            catch(\Exception $e){
+            
+            else{
                 return view('errors.email');
             }
             
         }
 
         public function OuvrirSignup(){
-            try{
-                return view('authentification.signup');
-            }
-
-            catch(\Exception $e){
-                return view('errors.404');
-            }
+            return view('authentification.signup');
         }
 
         public function OuvrirNotFound(){
@@ -99,33 +80,15 @@
         }
 
         public function OuvrirSignin(){
-            try{
-                return view('authentification.signIn');
-            }
-
-            catch(\Exception $e){
-                return view('errors.404');
-            }
+            return view('authentification.signin');
         }
 
         public function OuvrirForget1(){
-            try{
-                return view('authentification.forget1');
-            }
-
-            catch(\Exception $e){
-                return view('errors.404');
-            }
+            return view('authentification.forget1');
         }
 
         public function OuvrirForget4(){
-            try{
-                return view('authentification.forget4');
-            }
-
-            catch(\Exception $e){
-                return view('errors.404');
-            }
+            return view('authentification.forget4');
         }
     }
 ?>

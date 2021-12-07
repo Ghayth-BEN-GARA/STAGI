@@ -13,7 +13,7 @@
          */
         public function handle(Request $request, Closure $next){
             if(!Session()->has('email')){
-                return redirect('authentification.signin')->with('not-loged','');
+                return redirect('signin')->with('not-loged','');
             }
             return $next($request);
         }

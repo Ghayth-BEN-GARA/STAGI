@@ -20,8 +20,7 @@
                 $Personne->setNumeroAttribute($request->numero);
                 $Personne->setNaissanceAttribute($request->naissance);
                 $Personne->setProfessionAttribute($request->profession);
-                try{
-                    $Personne->save();
+                if($Personne->save()){
                     $CompteController->StoreCompte($request->email,$request->password);
                     $JournaleController = new JournaleController();
                     $JournaleController->StoreJournal('Inscription',$CompteController->GetIdCompte($request->email));
@@ -29,11 +28,11 @@
                     $this->EnvoyerMailBienvenue($request->email,$request->prenom);
                     $ImageController = new ImageController();
                     $ImageController->StoreImage($request->email);
-                    return view('profile');
+                    return redirect()->route('profileAuth')->with('compte-creer','');
                 }
 
-                catch(\Exception $e){
-                    return view ('errors.compte');
+                else{
+                    return view('errors.compte.blade.php');
                 }
             }
 
@@ -97,6 +96,10 @@
         public function GetNumeroFormatter($email){
             $Personne = Personne::where('email', '=', $email)->first();
             return $Personne->numeroFormatter();
+        }
+
+        public function OuvrirProfil(Request $request){
+            return view('profile');
         }
     }
 ?>

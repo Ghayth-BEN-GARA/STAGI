@@ -304,6 +304,7 @@ function CodeSecurite() {
 
     if (codeSaisie != oldCode) {
         $('#erreur').show();
+        $("#code").val('');
         event.preventDefault();
     } else {
         $('#erreur').hide();
