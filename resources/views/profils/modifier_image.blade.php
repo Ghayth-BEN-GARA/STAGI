@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang = "zxx" class = "no-js">
 	    <head>
-			@include('layouts.head',['nom_page'=> "Image de profile"])
+			@include('layouts.head',['nom_page'=> "Image de profil"])
 			<link rel = "stylesheet" href = "{{asset('site/css/box_alert.css')}}">
 			<link rel = "stylesheet" href = "{{asset('site/css/profile.css')}}">
 		</head>
@@ -20,7 +20,7 @@
 							<h1 class = "text-white">
 								{{$dataP['nomComplet']}}				
 							</h1>	
-							<p class = "text-white link-nav"><a href = "{{url('/')}}">Accueil </a><span class = "lnr lnr-arrow-right"></span><a href = "{{url('/photo-profile')}}"> Image de profile</a></p>
+							<p class = "text-white link-nav"><a href = "{{url('/')}}">Accueil </a><span class = "lnr lnr-arrow-right"></span><a href = "{{url('/photo-profile')}}"> Image de profil</a></p>
 						</div>	
 					</div>
 				</div>
@@ -48,7 +48,7 @@
 										</div>
 									</div>
 								</div>
-								@elseif(Session::has('image-not-updated'))
+							@elseif(Session::has('image-not-updated'))
 								<div class = "position_erreur">
 									<div class = "container-fluid text-center col-lg-12 position-alert">
 										<div class = "row">
@@ -59,6 +59,63 @@
 														<div class = "tip-box-danger">
 															<p>
 																Pour des raisons techniques, il n'est pas possible de modifier votre photo de profil.</p>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								@elseif(Session::has('image-vide'))
+								<div class = "position_erreur">
+									<div class = "container-fluid text-center col-lg-12 position-alert">
+										<div class = "row">
+											<div class = "col-xs-12 col-sm-12 col-sm-offset-3">
+												<div class = "new-message-box">
+													<div class = "new-message-box-danger">
+														<div class = "info-tab tip-icon-danger" title = "danger"><i></i></div>
+														<div class = "tip-box-danger">
+															<p>
+																Vous ne pouvez pas supprimer une photo qui n'existe pas.</p>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								@elseif(Session::has('image-deleted'))
+								<div class = "position_erreur">
+									<div class = "container-fluid text-center col-lg-12 position-alert">
+										<div class = "row">
+											<div class = "col-xs-12 col-sm-12 col-sm-offset-3">
+												<div class = "new-message-box">
+													<div class = "new-message-box-success">
+														<div class = "info-tab tip-icon-success" title = "success"><i></i></div>
+														<div class = "tip-box-success">
+															<p>
+																Votre photo de profil a été bien supprimée.</p>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								@elseif(Session::has('image-not-deleted'))
+								<div class = "position_erreur">
+									<div class = "container-fluid text-center col-lg-12 position-alert">
+										<div class = "row">
+											<div class = "col-xs-12 col-sm-12 col-sm-offset-3">
+												<div class = "new-message-box">
+													<div class = "new-message-box-danger">
+														<div class = "info-tab tip-icon-danger" title = "danger"><i></i></div>
+														<div class = "tip-box-danger">
+															<p>
+																Pour des raisons techniques, votre photo ne peut pas être supprimée.</p>
 															</p>
 														</div>
 													</div>

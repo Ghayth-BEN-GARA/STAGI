@@ -361,3 +361,30 @@ function ValiderModifierPassword() {
         $("#form_forget4").submit();
     }
 }
+
+function OuvrirModifierImage() {
+    location.href = "/photo-profile";
+}
+
+function SupprimerImage() {
+    swal({
+        title: "Vous êtes sur ?",
+        text: "Vous ne pourrez pas revenir en arrière !",
+        type: 'warning',
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonColor: '#142850',
+        cancelButtonColor: '#d33',
+        focusConfirm: true,
+        confirmButtonText: "Oui, supprimer l'image",
+        cancelButtonText: 'Annuler'
+    })
+
+    .then((result) => {
+        if (result.value) {
+            location.href = "/supprimer-image";
+        } else if (result.dismiss === swal.DismissReason.cancel) {
+            swal.close();
+        }
+    });
+}

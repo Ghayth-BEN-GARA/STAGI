@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang = "zxx" class = "no-js">
 	    <head>
-			@include('layouts.head',['nom_page'=>'Profile'])
+			@include('layouts.head',['nom_page'=>'Profil'])
 			<link rel = "stylesheet" href = "{{asset('site/css/box_alert.css')}}">
 			<link rel = "stylesheet" href = "{{asset('site/css/profile.css')}}">
 		</head>
@@ -20,7 +20,7 @@
 							<h1 class = "text-white">
 								{{$dataP['nomComplet']}}				
 							</h1>	
-							<p class = "text-white link-nav"><a href = "{{url('/')}}">Accueil </a><span class = "lnr lnr-arrow-right"></span><a href = "{{url('/profile')}}"> Profile</a></p>
+							<p class = "text-white link-nav"><a href = "{{url('/')}}">Accueil </a><span class = "lnr lnr-arrow-right"></span><a href = "{{url('/profile')}}"> Profil</a></p>
 						</div>	
 					</div>
 				</div>
@@ -78,7 +78,7 @@
                                             @else
                                             	<img src = "{{asset('uploads/images/'.$dataP['nomComplet'].'/'.$dataP['photo'])}}" alt = "Photo de {{$dataP['nomComplet']}}">
 											@endif
-                            				<div class = "file btn btn-lg btn-primary">
+                            				<div class = "file btn btn-lg btn-primary" onclick = "OuvrirModifierImage()">
                                 				<a href = "{{url('/photo-profile')}}" style = "color:#fff">Changer l'image</a>
                             				</div>                           
                         				</div>
@@ -108,7 +108,7 @@
 										</div>
 									</div>
 									<div class = "col-md-2">
-                        				<input type = "button" class = "profile-edit-btn" name = "btnAddMore" value = "Modifier le profile"/>
+                        				<input type = "button" class = "profile-edit-btn" name = "btnAddMore" value = "Modifier le profil"/>
                     				</div>
 								</div>
 								<div class = "row">

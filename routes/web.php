@@ -33,6 +33,7 @@
     Route::get('/profile', [PersonneController::class, 'OuvrirProfil'])->name('profileAuth')->middleware('notLoged');
     Route::get('/photo-profile', [PersonneController::class, 'OuvrirUpdateImage'])->middleware('notLoged');
     Route::post('/update-image-profile', [ImageController::class, 'GestionUpdateImageProfile']);
+    Route::get('/supprimer-image', [ImageController::class, 'SupprimerImage']);
 ?>
 
 
