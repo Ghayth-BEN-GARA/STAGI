@@ -38,7 +38,7 @@
 													<div class = "new-message-box-danger">
 														<div class = "info-tab tip-icon-danger" title = "danger"><i></i></div>
 														<div class = "tip-box-danger">
-															<p style = 'color: #b71c1c;font-weight:600'>
+															<p>
 																Vous avez entré votre ancien mot de passe.
 															</p>
 														</div>
@@ -76,7 +76,7 @@
 												<div class = "new-message-box-danger">
 													<div class = "info-tab tip-icon-danger" title = "danger"><i></i></div>
 													<div class = "tip-box-danger">
-														<p style = 'color: #b71c1c;font-weight:600'>
+														<p>
 															Les deux nouveaux mots de passe ne sont pas les mêmes.
 														</p>
 													</div>
@@ -86,7 +86,7 @@
 									</div>
 								</div>
 							</div>
-							<form method = "post" name = "form_password" id = "form_password" action = "{{url('/gestion-update-password-profile')}}" enctype = "multipart/form-data">
+							<form method = "post" name = "form_password" id = "form_password" action = "{{url('/gestion-update-password-profile')}}">
 								@csrf
 								<div class = "row">
 									<div class = "col-md-4">

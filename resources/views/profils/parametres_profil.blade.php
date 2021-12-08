@@ -66,8 +66,26 @@
                                                                 </dt>
                                                                 <dd>
                                                                     Pour sécuriser votre compte, vous devez ajouter un mot de passe d'au moins 8 caractères et contenant des lettres minuscules, une lettre majuscule, de nombreux chiffres et de nombreux caractères spéciaux.
-                                                                    Si vous le souhaitez, vous pouvez modifier votre mot de passe en un seul clic : <b><a href = "{{url('update-password-compte')}}">Modifier le mot de passe</a></b>.
+                                                                    Si vous le souhaitez, vous pouvez modifier votre mot de passe en un seul clic : <b><a href = "{{url('/update-password-compte')}}">Modifier le mot de passe</a></b>.
                                                                 </dd>
+																<dt>
+                                                                	<a href = "javascript: void(0)">Adresse e-mail</a>
+                                                            	</dt>
+																<dd>
+																	Votre adresse e-mail est intouchable par défaut. Pour des raisons de sécurité, cette modification sera bientôt disponible.
+																</dd>
+																<dt>
+                                                                	<a href = "javascript: void(0)">Profil</a>
+                                                            	</dt>
+																<dd>
+                                                                	Votre profil vous présente sur notre plateforme. Essayez de mettre vos vraies informations afin que les entreprises puissent vous trouver facilement et éviter tout type de problème. Pour consulter votre <b><a href = "{{url('profile')}}">profil</a></b>, merci de cliquer içi.
+                                                            	</dd>
+																<dt>
+                                                                	<a href = "javascript: void(0)">Journal d'authentification</a>
+                                                            	</dt>
+																<dd>
+                                                                Notre plateforme vous donne la possibilité de vérifier l'historique d'authentification de votre compte. Si vous le souhaitez, vous pouvez <b><a href = "{{url('/journal-authentification')}}">le vérifier maintenant</a></b> en utilisant cette option.
+                                                            	</dd>
                                                             </dl>
                                                         </div>
                                                     </div>

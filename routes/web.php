@@ -4,6 +4,7 @@
     use App\Http\Controllers\PersonneController;
     use App\Http\Controllers\CompteController;
     use App\Http\Controllers\ImageController;
+    use App\Http\Controllers\JournaleController;
 
     /*
     |--------------------------------------------------------------------------
@@ -37,6 +38,8 @@
     Route::get('/parametres-compte', [CompteController::class, 'OuvrirParametresCompte'])->middleware('notLoged');
     Route::get('/update-password-compte', [CompteController::class, 'OuvrirUpdatePasswordCompte'])->middleware('notLoged');
     Route::post('/gestion-update-password-profile', [CompteController::class, 'GestionUpdatePasswordProfile']);
+    Route::get('/journal-authentification', [JournaleController::class, 'OuvrirJournaleCompte'])->middleware('notLoged');
+    Route::get('/gestion-vider-journal', [JournaleController::class, 'GestionSupprimerJournal']);
 ?>
 
 

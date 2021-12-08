@@ -410,3 +410,26 @@ function ValiderModifierPasswordProfil() {
         $("#form_password").submit();
     }
 }
+
+function QuestionSupprimerJournal() {
+    swal({
+        title: "Vous êtes sur ?",
+        text: "Vous ne pourrez pas revenir en arrière !",
+        type: 'warning',
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonColor: '#142850',
+        cancelButtonColor: '#d33',
+        focusConfirm: true,
+        confirmButtonText: 'Oui, supprimer le journal',
+        cancelButtonText: 'Annuler'
+    })
+
+    .then((result) => {
+        if (result.value) {
+            location.href = "/gestion-vider-journal";
+        } else if (result.dismiss === swal.DismissReason.cancel) {
+            swal.close();
+        }
+    });
+}

@@ -29,7 +29,7 @@
         }
 
         public function getDateAttribute(){
-            return ($this->attributes['date']);
+            return (date('D d F Y',strtotime($this->attributes['date'])));
         }
 
         public function setDateAttribute(){
@@ -37,7 +37,7 @@
         }
 
         public function getTempsAttribute(){
-            return ($this->attributes['temps']);
+            return (date("H:i",strtotime($this->attributes['temps'])));
         }
 
         public function setTempsAttribute(){
