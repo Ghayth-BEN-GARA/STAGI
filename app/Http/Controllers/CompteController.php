@@ -4,7 +4,9 @@
     use Illuminate\Support\Facades\Session;
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
+    use File;
     use App\Models\Compte;
+    use App\Models\Personne;
 
     class CompteController extends Controller{
         public function VerifierCompte($email){
@@ -285,6 +287,16 @@
                 return view('errors.compte_desactiver');
             }
             
+        }
+
+        public function SupprimerCompte(Request $request){
+            $PersonneController = new PersonneController();
+            $email = $PersonneController->GetEmailSessionActive($request);
+            $dataP = $PersonneController->GetDataSessionActive($email);
+            File::deleteDirectory(public_path('uploads/images/'.$dataP['nomComplet']));
+            $Personne = Personne::where('email',$email)->delete();
+            $this->LogOut();
+            return redirect()->route('login')->with('compte-supprimer','');
         }
     }
 ?>

@@ -450,6 +450,33 @@ function QuestionDesactiverCompte() {
 
     .then((result) => {
         if (result.value) {
+            Chargement().then(DesactiverCompte());
+        } else if (result.dismiss === swal.DismissReason.cancel) {
+            swal.close();
+        }
+    });
+}
+
+function DesactiverCompte() {
+    location.href = "/desactiver-compte";
+}
+
+function QuestionSupprimerCompte() {
+    swal({
+        title: "Attention !",
+        text: "Si vous confirmez, votre compte sera définitivement supprimé",
+        type: 'warning',
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonColor: '#142850',
+        cancelButtonColor: '#d33',
+        focusConfirm: true,
+        confirmButtonText: "Oui, je confirme",
+        cancelButtonText: 'Annuler'
+    })
+
+    .then((result) => {
+        if (result.value) {
             Chargement().then(SupprimerCompte());
         } else if (result.dismiss === swal.DismissReason.cancel) {
             swal.close();
@@ -458,5 +485,5 @@ function QuestionDesactiverCompte() {
 }
 
 function SupprimerCompte() {
-    location.href = "/desactiver-compte";
+    location.href = "/supprimer-compte";
 }

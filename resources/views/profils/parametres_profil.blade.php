@@ -91,8 +91,15 @@
                                                             	</dt>
 																<dd>
                                                                 	Si vous souhaitez désactiver temporairement votre compte, vous pouvez le faire en un seul clic :
-                                                                <b><a href = "javascript: void(0)" onclick = "QuestionDesactiverCompte()">Désactiver le compte</a></b>
-                                                            </dd>
+                                                                	<b><a href = "javascript: void(0)" onclick = "QuestionDesactiverCompte()">Désactiver le compte</a></b>
+                                                            	</dd>
+																<dt>
+                                                                	<a href = "javascript: void(0)">Supprimer le compte</a>
+                                                            	</dt>
+																<dd>
+																	Si vous souhaitez supprimer définitivement votre compte, vous pouvez le faire en une seule clique :
+																	<b><a href = "javascript: void(0)" onclick = "QuestionSupprimerCompte()">Supprimer le compte</a></b>
+                                                            	</dd>
                                                             </dl>
                                                         </div>
                                                     </div>

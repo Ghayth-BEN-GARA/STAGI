@@ -41,6 +41,7 @@
     Route::get('/journal-authentification', [JournaleController::class, 'OuvrirJournaleCompte'])->middleware('notLoged');
     Route::get('/gestion-vider-journal', [JournaleController::class, 'GestionSupprimerJournal']);
     Route::get('/desactiver-compte', [CompteController::class, 'DesactiverCompte']);
+    Route::get('/supprimer-compte', [CompteController::class, 'SupprimerCompte']);
 ?>
 
 
