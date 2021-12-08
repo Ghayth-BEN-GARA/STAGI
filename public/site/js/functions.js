@@ -433,3 +433,30 @@ function QuestionSupprimerJournal() {
         }
     });
 }
+
+function QuestionDesactiverCompte() {
+    swal({
+        title: "Vous êtes sur ?",
+        text: "Si vous confirmez, votre compte sera temporairement désactivé",
+        type: 'warning',
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonColor: '#142850',
+        cancelButtonColor: '#d33',
+        focusConfirm: true,
+        confirmButtonText: "Oui, je confirme",
+        cancelButtonText: 'Annuler'
+    })
+
+    .then((result) => {
+        if (result.value) {
+            Chargement().then(SupprimerCompte());
+        } else if (result.dismiss === swal.DismissReason.cancel) {
+            swal.close();
+        }
+    });
+}
+
+function SupprimerCompte() {
+    location.href = "/desactiver-compte";
+}

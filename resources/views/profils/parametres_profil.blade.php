@@ -84,8 +84,15 @@
                                                                 	<a href = "javascript: void(0)">Journal d'authentification</a>
                                                             	</dt>
 																<dd>
-                                                                Notre plateforme vous donne la possibilité de vérifier l'historique d'authentification de votre compte. Si vous le souhaitez, vous pouvez <b><a href = "{{url('/journal-authentification')}}">le vérifier maintenant</a></b> en utilisant cette option.
+                                                                	Notre plateforme vous donne la possibilité de vérifier l'historique d'authentification de votre compte. Si vous le souhaitez, vous pouvez <b><a href = "{{url('/journal-authentification')}}">le vérifier maintenant</a></b> en utilisant cette option.
                                                             	</dd>
+																 <dt>
+                                                                	<a href = "javascript: void(0)">Désactiver le compte</a>
+                                                            	</dt>
+																<dd>
+                                                                	Si vous souhaitez désactiver temporairement votre compte, vous pouvez le faire en un seul clic :
+                                                                <b><a href = "javascript: void(0)" onclick = "QuestionDesactiverCompte()">Désactiver le compte</a></b>
+                                                            </dd>
                                                             </dl>
                                                         </div>
                                                     </div>

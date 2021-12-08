@@ -67,6 +67,25 @@
 										</div>
 									</div>
 								</div>
+								@elseif(Session::has('compte-activer'))
+								<div class = "position_erreur">
+									<div class = "container-fluid text-center col-lg-12 position-alert">
+										<div class = "row">
+											<div class = "col-xs-12 col-sm-12 col-sm-offset-3">
+												<div class = "new-message-box">
+													<div class = "new-message-box-success">
+														<div class = "info-tab tip-icon-success" title = "success"><i></i></div>
+														<div class = "tip-box-success">
+															<p>
+																Nous sommes heureux de vous revoir parmi nous. Vous pouvez désormais utiliser votre compte normalement et bénéficier de tous nos services comme d'habitude.</p>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							@endif
 							<form method = "post" name = "form_profil" id = "form_profil" action = "#">
 								@csrf

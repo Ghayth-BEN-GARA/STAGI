@@ -99,7 +99,26 @@
 											</div>
 										</div>
 									</div>
-								@endif
+									@elseif (Session::has('compte-desactiver'))
+										<div class = "position_erreur">
+											<div class = "container-fluid text-center col-lg-12 position-alert">
+												<div class = "row">
+													<div class = "col-xs-12 col-sm-12 col-sm-offset-3">
+														<div class = "new-message-box">
+															<div class = "new-message-box-danger">
+																<div class = "info-tab tip-icon-danger" title = "danger"><i></i></div>
+																<div class = "tip-box-danger">
+																	<p>
+																		Votre compte a été désactivé. Pour plus d'informations, et si vous pensez que votre compte a été désactivé par erreur, veuillez nous contacter. Notez bien que vous pouvez l'activer à tout moment.
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									@endif
 								<form class = "row login_form" action = "{{url('/login')}}" method = "post" id = "form_signin" name = "form_signin">
 									@csrf
 									<div class = "col-md-12 form-group">

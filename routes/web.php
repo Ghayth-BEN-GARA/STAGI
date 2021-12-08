@@ -22,7 +22,7 @@
     Route::get('/signup', [SiteWebController::class, 'OuvrirSignup'])->middleware('login');
     Route::post('/registration', [PersonneController::class, 'Registration']);
     Route::get('/not-found', [SiteWebController::class, 'OuvrirNotFound']);
-    Route::get('/signin', [SiteWebController::class, 'OuvrirSignin'])->middleware('login');
+    Route::get('/signin', [SiteWebController::class, 'OuvrirSignin'])->name('login')->middleware('login');
     Route::post('/login', [CompteController::class, 'Authentification']);
     Route::get('/gestion-deconnexion', [CompteController::class, 'GestionDeconnexion']);
     Route::get('/forget1', [SiteWebController::class, 'OuvrirForget1'])->middleware('login');
@@ -40,6 +40,7 @@
     Route::post('/gestion-update-password-profile', [CompteController::class, 'GestionUpdatePasswordProfile']);
     Route::get('/journal-authentification', [JournaleController::class, 'OuvrirJournaleCompte'])->middleware('notLoged');
     Route::get('/gestion-vider-journal', [JournaleController::class, 'GestionSupprimerJournal']);
+    Route::get('/desactiver-compte', [CompteController::class, 'DesactiverCompte']);
 ?>
 
 

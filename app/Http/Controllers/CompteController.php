@@ -50,10 +50,20 @@
                 }
 
                 else{
-                    $JournaleController = new JournaleController();
-                    $JournaleController->StoreJournal('Connexion',$this->GetIdCompte($request->email));
-                    $this->CreerSession($request->email,$request);
-                    return redirect()->route('profileAuth');
+                    if($this->GetEtat($request->email) == 'Active'){
+                        $JournaleController = new JournaleController();
+                        $JournaleController->StoreJournal('Connexion',$this->GetIdCompte($request->email));
+                        $this->CreerSession($request->email,$request);
+                        return redirect()->route('profileAuth');
+                    }
+
+                    else{
+                        $this->ActiverCompte($request->email);
+                        $JournaleController = new JournaleController();
+                        $JournaleController->StoreJournal('Activation',$this->GetIdCompte($request->email));
+                        $this->CreerSession($request->email,$request);
+                        return redirect()->route('profileAuth')->with('compte-activer','');
+                    }
                 }
             }
         }
@@ -61,6 +71,15 @@
         public function GetPassword($email){
             $Compte = Compte::where('email', '=', $email)->first();
             return $Compte->getPasswordAttribute();
+        }
+
+        public function GetEtat($email){
+            $Compte = Compte::where('email', '=', $email)->first();
+            return $Compte->getEtatAttribute();
+        }
+
+        public function ActiverCompte($email){
+            $Compte = Compte::where('email',$email)->update(['etat'=>"Active"]);
         }
 
         public function GestionDeconnexion(Request $request){
@@ -249,6 +268,23 @@
                     return view ('errors.password');
                 }
             }
+        }
+
+        public function DesactiverCompte(Request $request){
+            $PersonneController = new PersonneController();
+            $email = $PersonneController->GetEmailSessionActive($request);
+            $Compte = Compte::where('email',$email)->update(['etat'=>"Desactive"]);
+            if($Compte){
+                $JournaleController = new JournaleController();
+                $JournaleController->StoreJournal('Désactivation',$this->GetIdCompte($email));
+                $this->LogOut();
+                return redirect()->route('login')->with('compte-desactiver','');
+            }
+
+            else{
+                return view('errors.compte_desactiver');
+            }
+            
         }
     }
 ?>
