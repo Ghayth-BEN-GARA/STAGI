@@ -221,5 +221,34 @@
             $dataP = $PersonneController->GetDataSessionActive($email);
             return view('profils.parametres_profil',compact('dataP'));
         }
+
+        public function OuvrirUpdatePasswordCompte(Request $request){
+            $PersonneController = new PersonneController();
+            $email = $PersonneController->GetEmailSessionActive($request);
+            $dataP = $PersonneController->GetDataSessionActive($email);
+            return view('profils.modifier_password',compact('dataP'));
+        }
+
+        public function GestionUpdatePasswordProfile(Request $request){
+            $PersonneController = new PersonneController();
+            $email = $PersonneController->GetEmailSessionActive($request);
+            $passwordProfil = $this->GetPassword($email);
+
+            if($passwordProfil == md5($request->new_password)){
+                return back()->with('same-old-password','');
+            }
+
+            else{
+                if($this->UpdatePassword($email,$request->new_password) == 'password-update'){
+                    $JournaleController = new JournaleController();
+                    $JournaleController->StoreJournal('Modification de mot de passe',$this->GetIdCompte($email));
+                    return back()->with('password-updated','');
+                }
+
+                else{
+                    return view ('errors.password');
+                }
+            }
+        }
     }
 ?>

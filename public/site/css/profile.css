@@ -144,3 +144,28 @@
     letter-spacing: 0.5px;
     margin-top: 4px;
 }
+
+#old_password,
+#new_password,
+#confirmer_password {
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+#togglePassword,
+#togglePassword2,
+#togglePassword3 {
+    float: right;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: -28px;
+}
+
+#old_password_erreur,
+#new_password_erreur,
+#confirmer_password_erreur {
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: #ff726f;
+    font-weight: 500;
+}

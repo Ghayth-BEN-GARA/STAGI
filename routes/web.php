@@ -35,6 +35,8 @@
     Route::post('/update-image-profile', [ImageController::class, 'GestionUpdateImageProfile']);
     Route::get('/supprimer-image', [ImageController::class, 'SupprimerImage']);
     Route::get('/parametres-compte', [CompteController::class, 'OuvrirParametresCompte'])->middleware('notLoged');
+    Route::get('/update-password-compte', [CompteController::class, 'OuvrirUpdatePasswordCompte'])->middleware('notLoged');
+    Route::post('/gestion-update-password-profile', [CompteController::class, 'GestionUpdatePasswordProfile']);
 ?>
 
 

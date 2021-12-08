@@ -6,7 +6,7 @@ function ValidationNom(input, erreur) {
         $(erreur).hide();
         nom = true;
     } else {
-        $(input).css("border", "1px solid #ff726f");
+        $(input).css("border", "2px solid #ff726f");
         $(erreur).html("Seuls les lettres et les espaces sont autorisés..");
         $(erreur).show();
         nom = false;
@@ -21,7 +21,7 @@ function ValidationNomAuth(input, erreur) {
         $(erreur).hide();
         nom = true;
     } else {
-        $(input).css("border-bottom", "1px solid #ff726f");
+        $(input).css("border-bottom", "2px solid #ff726f");
         $(erreur).html("Seuls les lettres et les espaces sont autorisés..");
         $(erreur).show();
         nom = false;
@@ -36,7 +36,7 @@ function ValidationEmail(input, erreur) {
         $(erreur).hide();
         email = true;
     } else {
-        $(input).css("border", "1px solid #ff726f");
+        $(input).css("border", "2px solid #ff726f");
         $(erreur).html("La format d'adresse e-mail invalide..");
         $(erreur).show();
         email = false;
@@ -51,7 +51,7 @@ function ValidationEmailAuth(input, erreur) {
         $(erreur).hide();
         email = true;
     } else {
-        $(input).css("border-bottom", "1px solid #ff726f");
+        $(input).css("border-bottom", "2px solid #ff726f");
         $(erreur).html("La format d'adresse e-mail invalide..");
         $(erreur).show();
         email = false;
@@ -67,8 +67,8 @@ function ValidationEmailForget(input, erreur, fa) {
         $(erreur).hide();
         email = true;
     } else {
-        $(input).css("border", "1px solid #ff726f");
-        $(fa).css("border", "1px solid #ff726f");
+        $(input).css("border", "2px solid #ff726f");
+        $(fa).css("border", "2px solid #ff726f");
         $(erreur).html("La format d'adresse e-mail invalide..");
         $(erreur).show();
         email = false;
@@ -83,7 +83,7 @@ function ValidationSujet(input, erreur) {
         $(erreur).hide();
         sujet = true;
     } else {
-        $(input).css("border", "1px solid #ff726f");
+        $(input).css("border", "2px solid #ff726f");
         $(erreur).html("Seuls les lettres et les espaces sont autorisés..");
         $(erreur).show();
         sujet = false;
@@ -98,7 +98,7 @@ function ValidationMessage(input, erreur) {
         $(erreur).hide();
         message = true;
     } else {
-        $(input).css("border", "1px solid #ff726f");
+        $(input).css("border", "2px solid #ff726f");
         $(erreur).html("Seuls les lettres, les points, et les espaces sont autorisés..");
         $(erreur).show();
         message = false;
@@ -121,7 +121,7 @@ function ValidationPrenom(input, erreur) {
         $(erreur).hide();
         prenom = true;
     } else {
-        $(input).css("border-bottom", "1px solid #ff726f");
+        $(input).css("border-bottom", "2px solid #ff726f");
         $(erreur).html("Seuls les lettres et les espaces sont autorisés..");
         $(erreur).show();
         prenom = false;
@@ -135,27 +135,27 @@ function ValidationPassword(input, erreur) {
         password = true;
     } else {
         if (input.val().length < 8) {
-            $(input).css("border-bottom", "1px solid #ff726f");
+            $(input).css("border-bottom", "2px solid #ff726f");
             $(erreur).html("Le mot de passe fait moins de 8 caractères..");
             $(erreur).show();
             password = false;
         } else if (!input.val().match(/([a-z])/)) {
-            $(input).css("border-bottom", "1px solid #ff726f");
+            $(input).css("border-bottom", "2px solid #ff726f");
             $(erreur).html("Le mot de passe doit contenir au moin un lettre minuscule..");
             $(erreur).show();
             password = false;
         } else if (!input.val().match(/([A-Z])/)) {
-            $(input).css("border-bottom", "1px solid #ff726f");
+            $(input).css("border-bottom", "2px solid #ff726f");
             $(erreur).html("Le mot de passe doit contenir au moin un lettre majuscule..");
             $(erreur).show();
             password = false;
         } else if (!input.val().match(/([0-9])/)) {
-            $(input).css("border-bottom", "1px solid #ff726f");
+            $(input).css("border-bottom", "2px solid #ff726f");
             $(erreur).html("Le mot de passe doit contenir au moin un chiffre..");
             $(erreur).show();
             password = false;
         } else if (!input.val().match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
-            $(input).css("border-bottom", "1px solid #ff726f");
+            $(input).css("border-bottom", "2px solid #ff726f");
             $(erreur).html("Le mot de passe doit contenir au moin un caractére spéciale..");
             $(erreur).show();
             password = false;
@@ -173,7 +173,7 @@ function ValidationNumero(input, erreur) {
         $(erreur).hide();
         numero = true;
     } else {
-        $(input).css("border-bottom", "1px solid #ff726f");
+        $(input).css("border-bottom", "2px solid #ff726f");
         $(erreur).html("Le numéro doit être composé de 8 chiffres..");
         $(erreur).show();
         numero = false;
@@ -191,7 +191,7 @@ function ValidationNaissance(input, erreur) {
         $(erreur).hide();
         naissance = true;
     } else {
-        $(input).css("border-bottom", "1px solid #ff726f");
+        $(input).css("border-bottom", "2px solid #ff726f");
         $(erreur).html("Vous devez avoir 18 ans ou plus..");
         $(erreur).show();
         naissance = false;
@@ -291,7 +291,7 @@ function ValidationCodeSecurite(input, erreur) {
         $(erreur).hide();
         code = true;
     } else {
-        $(input).css("border-bottom", "1px solid #ff726f");
+        $(input).css("border-bottom", "2px solid #ff726f");
         $(erreur).html("Le code doit être composé de 8 chiffres..");
         $(erreur).show();
         code = false;
@@ -319,32 +319,32 @@ function ValidationPasswordUpdate(input, erreur, test) {
         test = true;
     } else {
         if (input.val().length < 8) {
-            $(input).css("border", "1px solid #ff726f");
+            $(input).css("border", "2px solid #ff726f");
             $(erreur).html("Le mot de passe fait moins de 8 caractères..");
             $(erreur).show();
             test = false;
         } else if (!input.val().match(/([a-z])/)) {
-            $(input).css("border", "1px solid #ff726f");
+            $(input).css("border", "2px solid #ff726f");
             $(erreur).html("Le mot de passe doit contenir au moin un lettre minuscule..");
             $(erreur).show();
             test = false;
         } else if (!input.val().match(/([A-Z])/)) {
-            $(input).css("border", "1px solid #ff726f");
+            $(input).css("border", "2px solid #ff726f");
             $(erreur).html("Le mot de passe doit contenir au moin un lettre majuscule..");
             $(erreur).show();
             test = false;
         } else if (!input.val().match(/([0-9])/)) {
-            $(input).css("border", "1px solid #ff726f");
+            $(input).css("border", "2px solid #ff726f");
             $(erreur).html("Le mot de passe doit contenir au moin un chiffre..");
             $(erreur).show();
             test = false;
         } else if (!input.val().match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
-            $(input).css("border", "1px solid #ff726f");
+            $(input).css("border", "2px solid #ff726f");
             $(erreur).html("Le mot de passe doit contenir au moin un caractére spéciale..");
             $(erreur).show();
             test = false;
         } else {
-            $(input).css("border", "1px solid #ced4da");
+            $(input).css("border", "2px solid #ced4da");
             $(erreur).hide();
             test = true;
         }
@@ -387,4 +387,26 @@ function SupprimerImage() {
             swal.close();
         }
     });
+}
+
+function ShowPassword(toogle, input) {
+    if ((input).attr("type") == "password") {
+        (input).attr("type", "text");
+        $(toogle).removeClass("fa-eye-slash");
+        $(toogle).addClass("fa-eye");
+    } else if ((input).attr("type") == "text") {
+        (input).attr("type", "password");
+        $(toogle).removeClass("fa-eye");
+        $(toogle).addClass("fa-eye-slash");
+    }
+}
+
+function ValiderModifierPasswordProfil() {
+    if ($('#new_password').val() != $('#confirmer_password').val()) {
+        $('#erreur_p').show();
+        event.preventDefault();
+    } else {
+        $('#erreur_p').hide();
+        $("#form_password").submit();
+    }
 }
