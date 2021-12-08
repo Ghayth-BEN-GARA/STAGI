@@ -12,7 +12,12 @@
          * @return mixed
          */
         public function handle(Request $request, Closure $next){
-            if(Session()->has('email')){
+            if(Session()->has('email') && (url('signin')==$request->url())
+            || Session()->has('email') && (url('signup')==$request->url())
+            || Session()->has('email') && (url('forget1')==$request->url())
+            || Session()->has('email') && (url('forget2')==$request->url())
+            || Session()->has('email') && (url('forget3')==$request->url())
+            || Session()->has('email') && (url('forget4')==$request->url())){
                 return redirect('not-found');
             }
             return $next($request);

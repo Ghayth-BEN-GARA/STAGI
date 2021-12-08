@@ -5170,3 +5170,11 @@ dl.toggle.time-line:before {
     letter-spacing: 0.8;
     text-align: center;
 }
+
+.error_form {
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: #ff726f;
+    font-weight: 500;
+}

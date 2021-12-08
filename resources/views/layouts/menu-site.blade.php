@@ -28,7 +28,7 @@
                     </a>
                 </li>	
             @else
-                <li><a href = "{{url('/signin')}}">Authentification</a></li>
+                <li><a href = "{{url('/signin')}}">Compte</a></li>
                 <li><a href = "{{url('/contact')}}">Contact</a></li>
 	        @endif	          		          
         </ul>

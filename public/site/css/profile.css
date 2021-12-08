@@ -162,10 +162,22 @@
 
 #old_password_erreur,
 #new_password_erreur,
-#confirmer_password_erreur {
+#confirmer_password_erreur,
+.error_form {
     display: block;
     margin: auto;
     text-align: center;
     color: #ff726f;
     font-weight: 500;
+}
+
+#basic {
+    max-width: 100%;
+    margin-top: -100px;
+}
+
+@media (max-width: 999px) {
+    #basic {
+        margin-top: 0px;
+    }
 }

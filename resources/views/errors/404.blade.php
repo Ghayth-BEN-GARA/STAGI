@@ -1,11 +1,11 @@
 <!DOCTYPE html>
     <html lang = "zxx" class = "no-js">
 	    <head>
-		    @include('layouts.head',['nom_page'=>'Page introuvable'])
-            <link rel = "stylesheet" href = "{{asset('site/css/404.css')}}">
+			@include('layouts.head',['nom_page'=> "Page introuvable"])
+			<link rel = "stylesheet" href = "{{asset('site/css/404.css')}}">
 		</head>
-		<body>	
-		    <header id = "header" id = "home">
+		<body>
+			<header id = "header" id = "home">
 	  		    @include('layouts.header-top')
 		        <div class = "container main-menu">
 		    	    @include('layouts.menu-site')
