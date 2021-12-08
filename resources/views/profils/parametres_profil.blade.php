@@ -100,6 +100,12 @@
 																	Si vous souhaitez supprimer définitivement votre compte, vous pouvez le faire en une seule clique :
 																	<b><a href = "javascript: void(0)" onclick = "QuestionSupprimerCompte()">Supprimer le compte</a></b>
                                                             	</dd>
+																<dt>
+                                                                	<a href = "javascript: void(0)">Problémes d'utilisation</a>
+                                                            	</dt>
+																<dd>
+                                                                	Dans certains cas et puisque notre plateforme est en période d'essai, des erreurs peuvent se produire, donc si vous y trouvez ces erreurs, veuillez nous contacter à tout moment ici : <b><a href = "/contact">Contact</a></b>
+                                                            	</dd>
                                                             </dl>
                                                         </div>
                                                     </div>
